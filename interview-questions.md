@@ -380,3 +380,195 @@
 358. What are Spring Boot starters, and what are some available starters?
 359. When and why would you use profiles in Spring Boot?
 360. What is Thymeleaf, and how is it used in Spring Boot?
+
+## Modern Java Interview Questions
+
+# Java Full Stack Senior Engineer — Interview Questions and Answers
+
+## Section 1: Core Java (Collections, Threading, OOPS)
+
+### Collections
+
+1. **Difference between List, Set, and Map?**
+- **List**: Ordered, allows duplicates (Ex: `ArrayList`)
+- **Set**: Unordered, no duplicates (Ex: `HashSet`)
+- **Map**: Key-value pairs, unique keys (Ex: `HashMap`)
+
+2. **Difference between HashMap and ConcurrentHashMap?**
+- **HashMap**: Not thread-safe
+- **ConcurrentHashMap**: Thread-safe, locks at bucket level
+
+3. **What is HashSet backed by?**
+- HashSet uses a **HashMap** internally
+
+4. **Difference between ArrayList and LinkedList?**
+- **ArrayList**: Fast random access (O(1)), slower insert/delete
+- **LinkedList**: Slow random access (O(n)), faster insert/delete at start/middle
+
+5. **Fail-fast vs Fail-safe?**
+- **Fail-fast**: Throws `ConcurrentModificationException` (e.g., `ArrayList`)
+- **Fail-safe**: Works on a copy (e.g., `ConcurrentHashMap`)
+
+6. **Difference between HashMap and Hashtable?**
+- **HashMap**: Not synchronized
+- **Hashtable**: Synchronized (legacy)
+
+7. **Difference between TreeMap and HashMap?**
+- **TreeMap**: Sorted by keys (O(log n))
+- **HashMap**: Unordered (O(1))
+
+8. **What is Comparable vs Comparator?**
+- **Comparable**: Natural ordering (`compareTo()` inside class)
+- **Comparator**: Custom ordering (external)
+
+9. **What is BlockingQueue?**
+- Thread-safe queue that blocks when empty/full (Ex: `ArrayBlockingQueue`)
+
+### Threading
+
+1. **Difference between Runnable and Callable?**
+- **Runnable**: No result, no exception
+- **Callable**: Returns result, can throw exception
+
+2. **Synchronized vs Lock?**
+- **Synchronized**: Simpler, intrinsic lock
+- **Lock (ReentrantLock)**: Explicit locking, tryLock, fair lock
+
+3. **What is volatile keyword?**
+- Ensures visibility of changes to variables across threads
+
+4. **Difference between wait(), sleep(), and yield()?**
+- **wait()**: Releases lock, inter-thread communication
+- **sleep()**: Pauses thread, holds lock
+- **yield()**: Hints scheduler to switch thread (no guarantee)
+
+5. **Thread-safe Singleton implementation?**
+```java
+public class Singleton {
+    private static volatile Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) instance = new Singleton();
+            }
+        }
+        return instance;
+    }
+}
+```
+
+6. **Difference between ExecutorService and ForkJoinPool?**
+- **ExecutorService**: Thread pool for independent tasks
+- **ForkJoinPool**: Divide and conquer tasks (work stealing)
+
+7. **What is ThreadLocal?**
+- Provides thread-confined variables (one copy per thread)
+
+### OOPS
+
+1. **4 Pillars of OOPS?**
+- Encapsulation, Abstraction, Inheritance, Polymorphism
+
+2. **Abstract class vs Interface?**
+- **Abstract**: Can have fields, constructor, behavior
+- **Interface**: Only method signatures (pre-Java 8), supports multiple inheritance
+
+3. **Overloading vs Overriding?**
+- **Overloading**: Same method name, different params (compile time)
+- **Overriding**: Same signature, subclass modifies (runtime)
+
+4. **What is encapsulation?**
+- Hiding internal details and exposing only necessary parts (via getters/setters)
+
+5. **What is polymorphism?**
+- Same method name behaves differently (compile/runtime)
+
+6. **What is composition vs inheritance?**
+- **Composition**: HAS-A relationship (more flexible)
+- **Inheritance**: IS-A relationship (tight coupling)
+
+7. **What is marker interface?**
+- Interface with no methods (Ex: `Serializable`)
+
+## Section 2: Java 8, 9, 10, 11+ Features
+
+### Java 8
+
+1. **What is a Lambda Expression?**
+- A concise way to represent functional interfaces
+
+2. **What is a Functional Interface?**
+- Interface with exactly one abstract method
+
+3. **Difference between map() and flatMap()?**
+- **map()**: Transforms each element
+- **flatMap()**: Flattens nested structures
+
+4. **What is Optional?**
+- Container to avoid `NullPointerException`
+
+5. **Default and Static methods in Interface?**
+- **Default**: Provide method body
+- **Static**: Utility methods
+
+6. **Stream API?**
+- Process sequences of elements using functional-style ops
+
+7. **Method Reference?**
+- Short syntax for lambdas
+
+8. **Date and Time API?**
+- Immutable, thread-safe (LocalDate, LocalDateTime)
+
+9. **Predicate, Function, Supplier, Consumer?**
+- Functional interfaces in java.util.function
+
+10. **What is Collectors.toMap() and Collectors.groupingBy()?**
+- Terminal operations for collecting results into maps/groups
+
+11. **Difference between intermediate and terminal Stream operations?**
+- **Intermediate**: map(), filter() → return Stream
+- **Terminal**: collect(), forEach(), reduce() → return result
+
+### Java 9
+
+1. **Module System (Project Jigsaw)?**
+- Split JDK into modules
+
+2. **JShell?**
+- Interactive REPL for Java
+
+3. **Stream API Enhancements?**
+- `takeWhile()`, `dropWhile()`, `ofNullable()`
+
+4. **Optional.or() method?**
+- Provides fallback Optional
+
+### Java 10
+
+1. **Local variable type inference (var)?**
+```java
+var list = new ArrayList<String>();
+```
+
+2. **Unmodifiable collections (copyOf)?**
+```java
+List<String> immutableList = List.copyOf(list);
+```
+
+### Java 11
+
+1. **New String methods?**
+- `isBlank()`, `lines()`, `strip()`, `repeat()`
+
+2. **HTTP Client API?**
+- Simplified HTTP calls (replaces HttpURLConnection)
+
+### Java 12+
+
+1. **Switch Expressions** (Java 14)
+2. **Records** (Java 16)
+3. **Text blocks** (Java 15)
+4. **Pattern Matching for instanceof** (Java 16)
+5. **Sealed Classes** (Java 17)
