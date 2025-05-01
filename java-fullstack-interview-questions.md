@@ -2,7 +2,6 @@
 
 ## Core Java
 
-```markdown
 1. **What is the difference between "super" and "this" in Core Java?**  
    **super** refers to the parent class, while **this** refers to the current instance of the class.
 
@@ -104,7 +103,6 @@
    - **Stateful**: Keeps track of previous states (e.g., session-based).  
    - **Stateless**: No memory of previous states (e.g., REST APIs).
 
-```markdown
 31. **Explain the concept of Wrapper Classes in Java.**  
    Wrapper classes are used to convert primitive types (e.g., int, char) into objects (e.g., Integer, Character) for use in collections and other object-based operations.
 
@@ -241,7 +239,6 @@
    The JVM reads serialized objects from byte streams and reconstructs them using **ObjectInputStream** for deserialization.
 
 
-```markdown
 61. **Explain the difference between a method and a function in Java.**  
    - **Method**: A function that is associated with an object (instance or static) in Java.
    - **Function**: A generic term for a block of code that can be executed and may return a value. In Java, it's always referred to as a method.
@@ -347,7 +344,6 @@
    A **Heap Dump** is a snapshot of the JVM's heap memory at a particular point, used for diagnosing memory leaks and performance issues.
 
 
-```markdown
 91. **Explain a few ways to fix memory issues in Java.**  
    - Increase heap size using `-Xms` and `-Xmx` options.
    - Use memory profiling tools like VisualVM or YourKit to identify memory leaks.
@@ -859,9 +855,6 @@
 **220. What is the threshold in an ArrayList in Java?**
 - The threshold for an `ArrayList` is the point at which its capacity is exceeded and needs to be increased. The capacity is typically increased by 50% of its current size when it exceeds the threshold.
 
-Here are the answers for questions 221 to 240:
-
-```markdown
 **221. Provide the formula used to calculate the new size of an ArrayList in Java.**
 - The new size of an `ArrayList` is calculated as the current size plus 50% of the current size (i.e., current size * 1.5). For example, if the current size is 10, the new size will be 15.
 
@@ -944,15 +937,10 @@ Here are the answers for questions 221 to 240:
   ```java
   ArrayList<Integer> list1 = new ArrayList<>();
   ArrayList<Integer> list2 = new ArrayList<>(50);  // Initial capacity of 50
-  ```
 
 **240. Which package do collection classes belong to in Java?**
 - Collection classes belong to the `java.util` package in Java.
-```
 
-Here are the answers for questions 241 to 258 in Markdown format:
-
-```markdown
 **241. Explain the difference between "import java.util.*" and "import java.util.ArrayList;" in Java.**
 - `import java.util.*;` imports all the classes in the `java.util` package, including `ArrayList`, `HashMap`, `List`, etc.
 - `import java.util.ArrayList;` imports only the `ArrayList` class from the `java.util` package, allowing you to use it directly in your code without needing to reference the package.
@@ -1053,7 +1041,6 @@ Here are the answers for questions 241 to 258 in Markdown format:
   - The size of the collection may change over time (dynamic resizing).
   - You need a flexible collection with convenient methods like `add()`, `remove()`, and `contains()`.
   - You don't require fixed-size performance optimizations and are working in a non-performance-critical context.
-```
 
 ## CONSTRUCTOR	
 
