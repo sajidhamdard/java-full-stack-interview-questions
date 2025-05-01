@@ -572,3 +572,293 @@ List<String> immutableList = List.copyOf(list);
 3. **Text blocks** (Java 15)
 4. **Pattern Matching for instanceof** (Java 16)
 5. **Sealed Classes** (Java 17)
+
+
+Perfect — let's move to **Section 4: Microservices**  
+Here’s a **focused list of most-asked Microservices interview questions with short crisp answers** for senior roles.  
+
+---
+
+# 📂 **Microservices**
+
+### 1️⃣ What is Microservices Architecture?  
+- Design style where an application is a **collection of small, loosely coupled services**, each responsible for a single business capability.
+
+---
+
+### 2️⃣ Monolithic vs Microservices  
+| Monolithic | Microservices |
+|------------|---------------|
+| Single deployable unit | Independent deployable services |
+| Tight coupling | Loose coupling |
+| Difficult to scale specific parts | Independent scaling |
+| Technology lock-in | Polyglot (multiple tech possible) |
+
+---
+
+### 3️⃣ How do Microservices communicate?  
+- **Synchronous**: REST, gRPC  
+- **Asynchronous**: Kafka, RabbitMQ, JMS
+
+---
+
+### 4️⃣ What is service discovery?  
+- Process where services **register themselves** and **discover other services dynamically**  
+Example: **Eureka**, **Consul**, **Zookeeper**
+
+---
+
+### 5️⃣ API Gateway - Why is it needed?  
+- Entry point for all clients → handles routing, load balancing, security, rate limiting  
+Examples: **Spring Cloud Gateway**, **Zuul**, **Kong**, **NGINX**
+
+---
+
+### 6️⃣ How to handle failures in Microservices?  
+- **Circuit Breaker** (Resilience4j, Hystrix)  
+- **Retry**, **Fallback**, **Timeouts**, **Bulkhead pattern**  
+- **Service mesh** (Istio, Linkerd)
+
+---
+
+### 7️⃣ What is Circuit Breaker Pattern?  
+- Prevents a service from making calls to a failing service.  
+If failures cross a threshold → circuit “opens” → skips calls → avoids cascading failure.
+
+---
+
+### 8️⃣ How to handle distributed transactions?  
+- **Saga Pattern** (Orchestration / Choreography)  
+- **Two-Phase Commit (2PC)** — less recommended due to complexity and locking.
+
+---
+
+### 9️⃣ What is Saga Pattern?  
+- **Orchestration**: Central coordinator controls transactions  
+- **Choreography**: Services communicate via events (no central coordinator)
+
+---
+
+### 1️⃣0️⃣ What is Idempotency?  
+- Same request can be executed multiple times → result remains same  
+Example: `DELETE /user/1` should always return success even if user is already deleted
+
+---
+
+### 1️⃣1️⃣ What is eventual consistency?  
+- In distributed systems → all services **will become consistent over time**, but not immediately (vs strong consistency)
+
+---
+
+### 1️⃣2️⃣ How do you secure Microservices?  
+- OAuth2, OpenID Connect  
+- JWT Tokens (Stateless auth)  
+- API Gateway as security layer  
+- Mutual TLS (mTLS) between services
+
+---
+
+### 1️⃣3️⃣ What is service mesh?  
+- Dedicated infrastructure layer to handle **service-to-service communication**  
+Features: **Load balancing, retries, security, telemetry**  
+Examples: **Istio**, **Linkerd**
+
+---
+
+### 1️⃣4️⃣ Key Microservice Design Patterns?  
+✅ Circuit Breaker  
+✅ API Gateway  
+✅ Saga Pattern  
+✅ Strangler Fig Pattern (migrating monolith to microservices)  
+✅ Bulkhead  
+✅ Retry  
+✅ Service Discovery
+
+---
+
+### 1️⃣5️⃣ What is config server in Microservices?  
+- Centralized external configuration management  
+Example: **Spring Cloud Config Server**
+
+---
+
+### 1️⃣6️⃣ What is Resilience4j?  
+- Lightweight fault-tolerance library for Java  
+Supports: Circuit Breaker, Retry, RateLimiter, Bulkhead
+
+---
+
+### 1️⃣7️⃣ What is distributed tracing?  
+- Track requests across multiple services  
+Tools: **Zipkin**, **Jaeger**, **Sleuth**
+
+---
+
+### 1️⃣8️⃣ How do you monitor Microservices?  
+- **Logging**: ELK (Elasticsearch, Logstash, Kibana)  
+- **Tracing**: Zipkin, Jaeger  
+- **Metrics**: Prometheus, Grafana  
+- **Health Checks**: /actuator/health (Spring Boot)
+
+---
+
+### 1️⃣9️⃣ How does load balancing work?  
+- **Client-side** (Ribbon)  
+- **Server-side** (API Gateway, NGINX)
+
+---
+
+### 2️⃣0️⃣ How to version Microservices APIs?  
+- URI versioning (`/api/v1/users`)  
+- Request Header versioning
+
+---
+
+### 2️⃣1️⃣ How to manage dependencies between microservices?  
+- Keep services **loosely coupled**  
+- Use **asynchronous communication** where possible (events/Kafka)
+---
+
+## 🟠 **Oracle / SQL**
+
+### 1️⃣ Difference between `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`  
+- `INNER JOIN`: only matching rows  
+- `LEFT JOIN`: all rows from left + matching from right  
+- `RIGHT JOIN`: all rows from right + matching from left
+
+---
+
+### 2️⃣ What is normalization?  
+- Organizing data to reduce **redundancy** and improve **data integrity**  
+- Normal forms: **1NF**, **2NF**, **3NF**, **BCNF**
+
+---
+
+### 3️⃣ ACID properties  
+✅ **Atomicity** — All or nothing  
+✅ **Consistency** — Valid state  
+✅ **Isolation** — Concurrent txn isolation  
+✅ **Durability** — Persist after commit
+
+---
+
+### 4️⃣ Difference between `WHERE` and `HAVING`?  
+- `WHERE`: filters rows **before grouping**  
+- `HAVING`: filters **after grouping**
+
+---
+
+### 5️⃣ Index vs Unique Key vs Primary Key  
+| Feature | Index | Unique Key | Primary Key |
+|---------|-------|-----------|-------------|
+| Uniqueness | No | Yes | Yes |
+| NULL allowed | Yes | Yes (1 NULL) | No |
+| Count allowed | Many | Many | 1 |
+
+---
+
+### 6️⃣ How to optimize SQL query?  
+- Proper indexes  
+- Avoid `SELECT *`  
+- Use **EXISTS** over **IN** (in large subqueries)  
+- Optimize joins  
+- Analyze execution plan
+
+---
+
+### 7️⃣ What is execution plan?  
+- Shows how SQL engine **executes a query** (index scan, full scan etc.)
+
+---
+
+### 8️⃣ Difference between clustered and non-clustered index?  
+- **Clustered**: rearranges actual data (1 per table)  
+- **Non-clustered**: separate index structure (many per table)
+
+---
+
+## 🟢 **NoSQL / MongoDB**
+
+### 9️⃣ SQL vs NoSQL?  
+| SQL | NoSQL |
+|-----|-------|
+| Relational | Non-relational |
+| Fixed schema | Flexible schema |
+| Joins | No joins |
+| ACID | Eventual Consistency (CAP Theorem) |
+
+---
+
+### 1️⃣0️⃣ CAP Theorem  
+✅ **Consistency** — all nodes same data  
+✅ **Availability** — system always responsive  
+✅ **Partition Tolerance** — continues despite network splits  
+👉 Can have **at most 2 out of 3** in distributed DB
+
+---
+
+### 1️⃣1️⃣ What is Document-Oriented DB?  
+- Stores data as **JSON-like documents**  
+Example: **MongoDB**
+
+---
+
+### 1️⃣2️⃣ Key features of MongoDB  
+✅ No schema / dynamic schema  
+✅ JSON-like documents (BSON)  
+✅ High availability (replica sets)  
+✅ Horizontal scaling (sharding)
+
+---
+
+### 1️⃣3️⃣ What is sharding?  
+- **Horizontal partitioning** → split large collections across multiple servers
+
+---
+
+### 1️⃣4️⃣ What is replication in MongoDB?  
+- Copies data across multiple servers (replica set) → High availability & failover
+
+---
+
+### 1️⃣5️⃣ MongoDB vs RDBMS  
+| MongoDB | RDBMS |
+|---------|-------|
+| JSON docs | Tables + rows |
+| No joins (embedding/refs) | Joins |
+| Horizontal scaling | Vertical scaling |
+| Schema-less | Schema-bound |
+
+---
+
+### 1️⃣6️⃣ Index types in MongoDB  
+✅ Single Field Index  
+✅ Compound Index  
+✅ Multikey Index (arrays)  
+✅ Text Index (for search)  
+✅ Geospatial Index
+
+---
+
+### 1️⃣7️⃣ What is aggregation in MongoDB?  
+- Pipeline-based processing (like SQL GROUP BY, JOIN)  
+Operators: `$match`, `$group`, `$project`, `$sort`
+
+---
+
+### 1️⃣8️⃣ How does MongoDB ensure durability?  
+- **Journaling** — writes operations to journal before data files
+
+---
+
+### 1️⃣9️⃣ Transactions in MongoDB?  
+- Since v4.0 → **Multi-document ACID transactions** (Replica sets)  
+- v4.2 → Transactions across shards
+
+---
+
+### 2️⃣0️⃣ How does MongoDB handle large datasets?  
+- Sharding → splits collection across shards  
+- Aggregation pipelines process large datasets efficiently
+
+---
