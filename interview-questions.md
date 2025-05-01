@@ -1,4 +1,4 @@
-# JAVA INTERVIEW QUESTIONS  
+# Java FUll Stack Interview Questions  
 
 ## Core Java
 
