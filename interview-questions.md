@@ -862,3 +862,430 @@ Operators: `$match`, `$group`, `$project`, `$sort`
 - Aggregation pipelines process large datasets efficiently
 
 ---
+
+### 1️⃣ What is AWS?  
+- Amazon Web Services — a **cloud computing platform** providing **IaaS**, **PaaS**, and **SaaS**  
+- Services: **Compute, Storage, Database, Networking, Security, Analytics**
+
+---
+
+### 2️⃣ EC2 vs S3 vs RDS vs Lambda  
+| Service | Purpose |
+|---------|---------|
+| **EC2** | Virtual machine (compute) |
+| **S3** | Object storage |
+| **RDS** | Relational database (managed) |
+| **Lambda** | Serverless function execution |
+
+---
+
+### 3️⃣ What is IAM?  
+- **Identity and Access Management** — manage users, roles, permissions  
+✅ **Least privilege principle**  
+✅ **IAM roles** (for apps / services)
+
+---
+
+### 4️⃣ What is an S3 bucket?  
+- **Object storage service** for files  
+✅ Versioning  
+✅ Lifecycle policies (auto delete/archive)  
+✅ Encryption (SSE-S3, SSE-KMS)
+
+---
+
+### 5️⃣ What is an Elastic Load Balancer (ELB)?  
+- Distributes incoming traffic across multiple targets (EC2, containers)  
+Types: **Application LB**, **Network LB**, **Gateway LB**
+
+---
+
+### 6️⃣ What is Auto Scaling?  
+- Automatically **adds/removes instances** based on load
+
+---
+
+### 7️⃣ What is VPC?  
+- **Virtual Private Cloud** — isolated cloud network  
+✅ Subnets (public/private)  
+✅ Route tables  
+✅ Security groups  
+✅ NAT Gateway (internet for private subnet)
+
+---
+
+### 8️⃣ What is AWS Lambda?  
+- **Serverless compute** → run code without managing servers  
+✅ Pay per execution  
+✅ Event-driven (S3, API Gateway, SNS triggers)
+
+---
+
+### 9️⃣ Difference between SNS and SQS?  
+| Feature | SNS | SQS |
+|---------|-----|-----|
+| Pattern | Pub/Sub | Queue |
+| Subscribers | Multiple | 1 receiver per message |
+| Push vs Pull | Push | Polling |
+
+---
+
+### 🔟 What is CloudFormation?  
+- **Infrastructure as Code (IaC)** — provision AWS resources via templates (YAML/JSON)
+
+---
+
+### 1️⃣1️⃣ What is CloudWatch?  
+- **Monitoring service** for metrics, logs, alarms
+
+---
+
+### 1️⃣2️⃣ What is Route 53?  
+- AWS **DNS service** (domain registration, routing)
+
+---
+
+### 1️⃣3️⃣ What is Elastic Beanstalk?  
+- **PaaS** — deploy Java, Node.js, Python apps easily → AWS manages infra
+
+---
+
+### 1️⃣4️⃣ What is EBS?  
+- **Elastic Block Store** — persistent disk volumes for EC2
+
+---
+
+### 1️⃣5️⃣ Difference between RDS and DynamoDB?  
+| Feature | RDS | DynamoDB |
+|---------|-----|----------|
+| Type | SQL (MySQL, Postgres…) | NoSQL |
+| Scaling | Vertical | Horizontal (auto scaling) |
+| Joins | Yes | No |
+| Transactions | Yes | Limited (supported) |
+
+---
+
+### 1️⃣6️⃣ What is Amazon Aurora?  
+- **High-performance RDS** (MySQL/Postgres compatible) — faster and more scalable
+
+---
+
+### 1️⃣7️⃣ What is AWS Secrets Manager?  
+- Securely store/manage **API keys, passwords, tokens** (auto-rotation)
+
+---
+
+### 1️⃣8️⃣ AWS services for Microservices?  
+✅ EC2 + ALB  
+✅ ECS (Containers) / EKS (Kubernetes)  
+✅ API Gateway + Lambda  
+✅ DynamoDB / Aurora  
+✅ S3 (Storage)  
+✅ CloudWatch (Monitoring)
+
+---
+
+### 1️⃣9️⃣ What is ECR?  
+- **Elastic Container Registry** — Docker image repository (like DockerHub)
+
+---
+
+### 2️⃣0️⃣ What is AWS Fargate?  
+- **Serverless container service** (no EC2 management)
+
+---
+
+### 2️⃣1️⃣ What is SSM Parameter Store?  
+- Securely store **configurations and secrets**
+
+---
+
+# 📂 ** Angular (Versions, Features, Concepts)**
+
+---
+
+### 1️⃣ What is Angular?  
+- **Angular** is a **TypeScript-based front-end framework** (developed by Google) for building **single-page applications (SPA)**
+
+---
+
+### 2️⃣ AngularJS vs Angular (2+)  
+| Feature | AngularJS (1.x) | Angular (2+) |
+|---------|-----------------|--------------|
+| Language | JavaScript | TypeScript |
+| Architecture | MVC | Component-based |
+| Data Binding | Two-way | Two-way (but improved) |
+| Mobile Support | No | Yes |
+| Performance | Slower | Faster (AOT + Tree Shaking) |
+
+---
+
+### 3️⃣ Key building blocks of Angular  
+✅ **Modules** (NgModules) — group related components/services  
+✅ **Components** — UI + logic  
+✅ **Templates** — HTML + directives  
+✅ **Services** — business logic  
+✅ **Dependency Injection** — inject services  
+✅ **Routing** — navigation
+
+---
+
+### 4️⃣ What is a Component?  
+- Building block → **HTML template + class + metadata**  
+```typescript
+@Component({ selector: 'app-root', templateUrl: './app.component.html' })
+export class AppComponent {}
+```
+
+---
+
+### 5️⃣ Lifecycle hooks  
+✅ `ngOnInit()` → component initialization  
+✅ `ngOnDestroy()` → cleanup  
+✅ `ngOnChanges()`, `ngDoCheck()`, etc.
+
+---
+
+### 6️⃣ What is Data Binding?  
+| Type | Example |
+|------|---------|
+| Interpolation | `{{ name }}` |
+| Property binding | `[disabled]="isDisabled"` |
+| Event binding | `(click)="onClick()"` |
+| Two-way binding | `[(ngModel)]="name"` |
+
+---
+
+### 7️⃣ What are Directives?  
+✅ **Structural** → `*ngIf`, `*ngFor` (change DOM structure)  
+✅ **Attribute** → `[ngClass]`, `[ngStyle]` (change appearance/behavior)
+
+---
+
+### 8️⃣ What is Angular CLI?  
+- Command-line tool to scaffold, build, test, deploy apps  
+`ng new`, `ng serve`, `ng build`
+
+---
+
+### 9️⃣ What is Dependency Injection?  
+- **Inject services** into components for loose coupling  
+```typescript
+constructor(private userService: UserService) {}
+```
+
+---
+
+### 🔟 What is a Service?  
+- Reusable **business logic** class  
+- Singleton (when provided in `root`)
+
+---
+
+### 1️⃣1️⃣ What is Routing?  
+- Navigate between components  
+✅ `RouterModule`  
+✅ Routes array  
+✅ `routerLink`
+
+---
+
+### 1️⃣2️⃣ Lazy Loading  
+- Load feature modules **on demand** (improves performance)
+
+---
+
+### 1️⃣3️⃣ What is Ahead-of-Time (AOT) compilation?  
+- Compiles app **during build time** → faster runtime
+
+---
+
+### 1️⃣4️⃣ What are Observables?  
+- Part of **RxJS** — handle **async streams** (HTTP, events)  
+✅ `subscribe()`  
+✅ `map()`, `filter()`, `mergeMap()`
+
+---
+
+### 1️⃣5️⃣ Difference between Subject and BehaviorSubject  
+| Subject | BehaviorSubject |
+|---------|-----------------|
+| No initial value | Initial value |
+| Emits to subscribers | Emits last + new values |
+
+---
+
+### 1️⃣6️⃣ Features by Angular version
+
+| Version | Features |
+|---------|----------|
+| Angular 2 | Initial release |
+| Angular 4 | Smaller bundles |
+| Angular 5 | HttpClient module |
+| Angular 6 | Angular Elements, CLI Workspaces |
+| Angular 7 | Virtual scrolling, Drag & Drop |
+| Angular 8 | Differential loading |
+| Angular 9 | Ivy renderer (default) |
+| Angular 10 | Optional strict typing |
+| Angular 11 | Faster builds |
+| Angular 12 | Nullish coalescing |
+| Angular 13 | ESBuild, no ViewEngine |
+| Angular 14 | Standalone components |
+| Angular 15 | Directive composition |
+| Angular 16 | Signals (reactivity model - preview) |
+| Angular 17 | Full Signals, Deferred loading |
+
+---
+
+### 1️⃣7️⃣ What are Angular Signals (Angular 16/17)?  
+- **Fine-grained reactivity model** (similar to React hooks)  
+- Reactive state management → **automatic change detection**
+
+---
+
+### 1️⃣8️⃣ What are Pipes?  
+- **Transform data in template**  
+✅ Built-in: `date`, `uppercase`, `currency`  
+✅ Custom Pipes
+
+```typescript
+{{ birthday | date:'shortDate' }}
+```
+
+---
+
+### 1️⃣9️⃣ What is a Guard?  
+- Control route access → **AuthGuard**, **CanActivate**, **CanDeactivate**
+
+---
+
+### 2️⃣0️⃣ Unit testing in Angular?  
+- **Jasmine** (framework)  
+- **Karma** (test runner)  
+- TestBed → create test modules
+
+---
+
+# 📂 **HTML (HyperText Markup Language)**
+
+---
+
+### 1️⃣ What is HTML?  
+- **Markup language** to define **structure** of web pages  
+- Uses **tags** to represent content (headings, paragraphs, links…)
+
+---
+
+### 2️⃣ What’s the difference between `<div>` and `<span>`?  
+| Element | Purpose |
+|---------|---------|
+| `<div>` | Block-level container |
+| `<span>` | Inline container |
+
+---
+
+### 3️⃣ What is semantic HTML?  
+- Using **meaningful tags** to improve readability and accessibility  
+✅ `<article>`, `<section>`, `<header>`, `<footer>`, `<nav>`
+
+---
+
+### 4️⃣ What is the difference between `<section>`, `<article>`, `<aside>`?  
+| Tag | Use |
+|-----|-----|
+| `<section>` | Thematic grouping |
+| `<article>` | Self-contained content |
+| `<aside>` | Sidebar, related content |
+
+---
+
+### 5️⃣ What is the difference between `<em>` and `<i>`, `<strong>` and `<b>`?  
+| Tag | Purpose |
+|-----|---------|
+| `<em>` | Emphasis (semantic) |
+| `<i>` | Italic (styling) |
+| `<strong>` | Strong importance (semantic) |
+| `<b>` | Bold (styling) |
+
+---
+
+### 6️⃣ What are the different types of form input elements?  
+✅ `<input type="text">`, `password`, `email`, `number`, `checkbox`, `radio`, `file`  
+✅ `<textarea>`, `<select>`, `<button>`
+
+---
+
+### 7️⃣ Difference between GET and POST method in forms?  
+| GET | POST |
+|-----|------|
+| Data in URL | Data in body |
+| Limited size | Larger data |
+| Bookmarkable | Not bookmarkable |
+| Less secure | More secure |
+
+---
+
+### 8️⃣ What are HTML5 new features?  
+✅ **Semantic tags** → `<section>`, `<article>`, `<nav>`  
+✅ **Audio/Video** → `<audio>`, `<video>`  
+✅ **Canvas**  
+✅ **LocalStorage / SessionStorage**  
+✅ **Form enhancements** (input types, validation)
+
+---
+
+### 9️⃣ What is the difference between `id` and `class`?  
+| Attribute | Purpose |
+|-----------|---------|
+| `id` | Unique identifier |
+| `class` | Can be reused |
+
+---
+
+### 🔟 What is the difference between block vs inline elements?  
+| Block | Inline |
+|-------|--------|
+| Takes full width | Takes content width |
+| Starts on new line | Same line |
+| `<div>`, `<p>`, `<section>` | `<span>`, `<a>`, `<strong>` |
+
+---
+
+### 1️⃣1️⃣ What is DOCTYPE?  
+- Declares **HTML version**  
+```html
+<!DOCTYPE html> <!-- HTML5 -->
+```
+
+---
+
+### 1️⃣2️⃣ What is meta tag?  
+✅ Metadata about document (charset, viewport, SEO)
+
+```html
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+---
+
+### 1️⃣3️⃣ How to make a link open in new tab?  
+```html
+<a href="url" target="_blank">Link</a>
+```
+
+---
+
+### 1️⃣4️⃣ How to embed an image?  
+```html
+<img src="image.jpg" alt="Description">
+```
+
+---
+
+### 1️⃣5️⃣ How to embed a video?  
+```html
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+</video>
+```
