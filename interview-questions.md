@@ -1289,3 +1289,2074 @@ constructor(private userService: UserService) {}
   <source src="video.mp4" type="video/mp4">
 </video>
 ```
+
+# 📂 **CSS (Cascading Style Sheets)**
+
+---
+
+### 1️⃣ What is CSS?  
+- **Cascading Style Sheets** used to style and lay out web pages  
+- Controls **layout**, **colors**, **fonts**, **spacing** of HTML elements
+
+---
+
+### 2️⃣ What are the different ways to apply CSS to a webpage?  
+| Method | Description |
+|--------|-------------|
+| Inline | `<element style="property: value;">` |
+| Internal | `<style>...</style>` inside `<head>` |
+| External | Link to `.css` file using `<link>` |
+
+---
+
+### 3️⃣ What is the Box Model in CSS?  
+- Defines how **content**, **padding**, **border**, and **margin** are displayed around elements
+
+---
+
+### 4️⃣ What is the difference between `padding` and `margin`?  
+| Property | Description |
+|----------|-------------|
+| `padding` | Space between content and border (inside element) |
+| `margin` | Space between element’s border and neighboring elements (outside element) |
+
+---
+
+### 5️⃣ What are CSS selectors?  
+- **Selectors** define which HTML elements are targeted by CSS  
+✅ **Element selector** → `div {}`  
+✅ **Class selector** → `.class-name {}`  
+✅ **ID selector** → `#id-name {}`  
+✅ **Attribute selector** → `[type="text"] {}`
+
+---
+
+### 6️⃣ What is the difference between `class` and `id` in CSS?  
+| Attribute | Purpose |
+|-----------|---------|
+| `class` | Reusable, can be applied to multiple elements |
+| `id` | Unique, should be applied to only one element |
+
+---
+
+### 7️⃣ What are pseudo-classes and pseudo-elements?  
+| Type | Description | Example |
+|------|-------------|---------|
+| Pseudo-class | Defines element’s state | `a:hover`, `:first-child` |
+| Pseudo-element | Targets specific part of an element | `::before`, `::after` |
+
+---
+
+### 8️⃣ What are the different types of position in CSS?  
+| Property | Description |
+|----------|-------------|
+| `static` | Default, normal flow |
+| `relative` | Positioned relative to its normal position |
+| `absolute` | Positioned relative to the nearest positioned ancestor |
+| `fixed` | Positioned relative to the viewport |
+| `sticky` | Sticks to the top of the viewport on scroll |
+
+---
+
+### 9️⃣ What is Flexbox?  
+- **Layout model** for building one-dimensional layouts (horizontal or vertical)  
+✅ **Flex container** → `display: flex`  
+✅ **Flex items** → Items inside flex container
+
+---
+
+### 🔟 What is Grid in CSS?  
+- **Layout system** for creating two-dimensional layouts (rows and columns)  
+✅ `display: grid`  
+✅ **Grid lines**, **grid-template-columns**, **grid-template-rows**
+
+---
+
+### 1️⃣1️⃣ What is the difference between `inline`, `block`, and `inline-block`?  
+| Display Type | Description |
+|--------------|-------------|
+| `inline` | Elements do not break the flow, occupy content width |
+| `block` | Elements take full width of parent, break the flow |
+| `inline-block` | Like `inline` but allows setting `width` and `height` |
+
+---
+
+### 1️⃣2️⃣ What is `z-index` in CSS?  
+- **Controls stack order** of positioned elements  
+✅ Higher `z-index` → closer to the front  
+✅ Must have `position` set (e.g., `relative`, `absolute`)
+
+---
+
+### 1️⃣3️⃣ What are media queries in CSS?  
+- Used for **responsive design**, applying styles based on **device characteristics**  
+```css
+@media (max-width: 600px) {
+  body { background-color: lightblue; }
+}
+```
+
+---
+
+### 1️⃣4️⃣ What is `display: none` vs `visibility: hidden`?  
+| Property | Effect |
+|----------|--------|
+| `display: none` | Removes the element from the document flow (not visible) |
+| `visibility: hidden` | Hides the element but still takes up space in the layout |
+
+---
+
+### 1️⃣5️⃣ What is the `transition` property in CSS?  
+- Used to **smoothly animate** a change in property values  
+```css
+transition: all 0.5s ease;
+```
+
+---
+
+### 1️⃣6️⃣ What is the `transform` property in CSS?  
+- Apply transformations (e.g., rotate, scale, translate) to elements  
+```css
+transform: rotate(45deg);
+```
+
+---
+
+### 1️⃣7️⃣ What is the `box-shadow` property in CSS?  
+- Adds shadow effects to elements  
+```css
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+```
+
+---
+
+### 1️⃣8️⃣ What is the difference between `em` and `rem` in CSS?  
+| Unit | Description |
+|------|-------------|
+| `em` | Relative to the **parent element’s font size** |
+| `rem` | Relative to the **root element’s font size** (`<html>`) |
+
+---
+
+### 1️⃣9️⃣ What are `::before` and `::after` pseudo-elements in CSS?  
+- Insert **content before** or **after** an element  
+```css
+element::before {
+  content: "Prefix";
+}
+```
+
+---
+
+### 2️⃣0️⃣ What is CSS specificity?  
+- Determines which CSS rule is applied when multiple rules target the same element  
+- **ID** has higher specificity than **class**, and **class** has higher specificity than **element** selectors
+
+---
+
+
+Let’s move on to **Section 10: JavaScript**  
+We’ll cover **key JavaScript concepts** and **commonly asked interview questions**.
+
+---
+
+# 📂 **JavaScript**
+
+---
+
+### 1️⃣ What is JavaScript?  
+- A **scripting language** used for creating dynamic and interactive web pages  
+- Works in the **browser** or on the **server-side** (with Node.js)
+
+---
+
+### 2️⃣ What are the data types in JavaScript?  
+- **Primitive**: `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`  
+- **Reference**: `object`, `array`, `function`
+
+---
+
+### 3️⃣ What is the difference between `var`, `let`, and `const`?  
+| Keyword | Scope | Reassignment | Hoisting |
+|---------|-------|--------------|----------|
+| `var`   | Function | Yes | Yes (initialized as `undefined`) |
+| `let`   | Block | Yes | Yes (does not initialize) |
+| `const` | Block | No | Yes (does not initialize) |
+
+---
+
+### 4️⃣ What is Hoisting in JavaScript?  
+- **Hoisting** is JavaScript's behavior of moving **declarations** to the top of their scope during compilation (variables, functions)
+
+---
+
+### 5️⃣ What is a closure in JavaScript?  
+- A **function** that retains access to its lexical scope (even after it is executed outside of that scope)  
+```javascript
+function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    return counter;
+  }
+}
+const increment = outer();
+increment(); // 1
+```
+
+---
+
+### 6️⃣ What is a promise in JavaScript?  
+- An **asynchronous operation** that represents a value that may not be available yet  
+- **States**: `pending`, `fulfilled`, `rejected`  
+```javascript
+let promise = new Promise((resolve, reject) => { 
+  resolve('Success');
+});
+```
+
+---
+
+### 7️⃣ What is the difference between `==` and `===`?  
+- **`==`** → Loose equality (performs type coercion)  
+- **`===`** → Strict equality (does not perform type coercion)
+
+---
+
+### 8️⃣ What are arrow functions in JavaScript?  
+- A **shorter syntax** for writing functions  
+- Does not bind its own `this`, it inherits it from the surrounding context  
+```javascript
+const add = (a, b) => a + b;
+```
+
+---
+
+### 9️⃣ What is the `this` keyword in JavaScript?  
+- Refers to the **current object** in methods, or the **global object** in functions  
+- In arrow functions, `this` is inherited from the **enclosing context**
+
+---
+
+### 🔟 What is event delegation in JavaScript?  
+- A technique where a **parent element** listens for events on **child elements** to improve performance and reduce memory usage
+
+---
+
+### 1️⃣1️⃣ What are higher-order functions in JavaScript?  
+- Functions that either take other functions as arguments or return them  
+```javascript
+function filterArray(arr, callback) {
+  return arr.filter(callback);
+}
+```
+
+---
+
+### 1️⃣2️⃣ What is the `bind()` method in JavaScript?  
+- **`bind()`** creates a **new function** that, when invoked, has its `this` set to the provided value  
+```javascript
+const obj = { name: 'John' };
+const greet = function() { console.log(this.name); };
+const boundGreet = greet.bind(obj);
+boundGreet(); // John
+```
+
+---
+
+### 1️⃣3️⃣ What is the event loop in JavaScript?  
+- The **event loop** continuously checks the **call stack** for tasks to execute and then pushes tasks from the **callback queue** into the call stack
+
+---
+
+### 1️⃣4️⃣ What are JavaScript modules?  
+- Used to **split code into smaller files** and use `import`/`export` syntax to share and access functionalities  
+```javascript
+// module.js
+export const greet = () => console.log('Hello');
+// app.js
+import { greet } from './module';
+```
+
+---
+
+### 1️⃣5️⃣ What is destructuring in JavaScript?  
+- Allows unpacking values from arrays or properties from objects into variables  
+```javascript
+const person = { name: 'Alice', age: 25 };
+const { name, age } = person;
+```
+
+---
+
+### 1️⃣6️⃣ What is spread/rest syntax?  
+- **Spread**: Unpacks elements from an array or object  
+```javascript
+const arr = [1, 2, 3];
+const newArr = [...arr, 4];
+```
+- **Rest**: Collects multiple elements into an array  
+```javascript
+const sum = (...args) => args.reduce((a, b) => a + b, 0);
+```
+
+---
+
+### 1️⃣7️⃣ What is `setTimeout()` and `setInterval()`?  
+- **`setTimeout()`**: Executes a function after a specified delay (one-time)  
+- **`setInterval()`**: Executes a function at specified intervals (repeatedly)  
+```javascript
+setTimeout(() => { console.log('Hello'); }, 1000);
+setInterval(() => { console.log('Hello'); }, 1000);
+```
+
+---
+
+### 1️⃣8️⃣ What is `localStorage` and `sessionStorage`?  
+- **`localStorage`**: Stores data **permanently** (until deleted)  
+- **`sessionStorage`**: Stores data for the duration of the **session**
+
+---
+
+### 1️⃣9️⃣ What is a `Map` in JavaScript?  
+- A collection of **key-value pairs**, where keys can be any type (not just strings)  
+```javascript
+let map = new Map();
+map.set('name', 'John');
+```
+
+---
+
+### 2️⃣0️⃣ What is `reduce()` in JavaScript?  
+- A **higher-order function** that **accumulates** array values into a single result  
+```javascript
+const sum = [1, 2, 3].reduce((acc, val) => acc + val, 0); // 6
+```
+
+# 📂 **Docker**
+
+---
+
+### 1️⃣ What is Docker?  
+- **Docker** is an open-source platform that enables **developers** to automate the deployment of applications inside lightweight, portable containers  
+- Containers bundle an application’s code, libraries, dependencies, and runtime together
+
+---
+
+### 2️⃣ What is a container in Docker?  
+- A **container** is a **lightweight, standalone executable package** of software that includes everything needed to run it  
+- It is based on a Docker **image** and can run on any machine with Docker installed
+
+---
+
+### 3️⃣ What is the difference between a Docker image and a Docker container?  
+| Concept       | Docker Image                              | Docker Container                          |
+|---------------|-------------------------------------------|-------------------------------------------|
+| **Definition** | Read-only template with the application code, libraries, and dependencies | Running instance of an image |
+| **Lifecycle**  | Created from a Dockerfile and stored in the Docker registry | Runs as a live, active process |
+| **Persistence** | Immutable and versioned | Mutable, stores data and changes during runtime |
+
+---
+
+### 4️⃣ How does Docker work?  
+- **Docker Engine** runs on the host machine, creating containers from images using `docker run`  
+- Containers run the application inside an isolated environment, sharing the host OS kernel
+
+---
+
+### 5️⃣ What is a Dockerfile?  
+- A **Dockerfile** is a text file that contains a series of commands used to **build a Docker image**  
+- Defines instructions like which base image to use, which dependencies to install, and how to run the application
+
+---
+
+### 6️⃣ What is Docker Compose?  
+- **Docker Compose** is a tool for defining and running multi-container Docker applications  
+- Uses a YAML file (`docker-compose.yml`) to configure application services, networks, and volumes
+
+---
+
+### 7️⃣ What are Docker volumes?  
+- **Volumes** are used to persist data generated by and used by Docker containers  
+- They allow data to **survive container restarts** and be shared between containers
+
+---
+
+### 8️⃣ What is the difference between `CMD` and `ENTRYPOINT` in a Dockerfile?  
+| Instruction  | CMD | ENTRYPOINT |
+|--------------|-----|------------|
+| **Purpose**  | Provides default arguments for the container | Defines the command to run within the container |
+| **Flexibility** | Can be overridden at runtime | Cannot be overridden at runtime |
+
+---
+
+### 9️⃣ How do you scale applications using Docker?  
+- Docker containers can be scaled by running multiple instances of the same container across different hosts or on the same host  
+- **Docker Swarm** or **Kubernetes** are commonly used to manage scaling, load balancing, and high availability
+
+---
+
+### 🔟 What is Docker Swarm?  
+- **Docker Swarm** is Docker’s native clustering and orchestration tool  
+- It turns a group of Docker hosts into a **single virtual Docker host** and manages the deployment, scaling, and networking of containers
+
+---
+
+### 1️⃣1️⃣ What is a Docker registry?  
+- A **Docker registry** is a **repository** where Docker images are stored and shared  
+- The most common registry is **Docker Hub**, but private registries can also be used
+
+---
+
+### 1️⃣2️⃣ How do you connect a Docker container to a network?  
+- Use the `--network` flag when running the container to attach it to a specific Docker network  
+```bash
+docker run --network my-network my-container
+```
+
+---
+
+### 1️⃣3️⃣ What is the purpose of `docker ps`?  
+- The **`docker ps`** command lists all **running** containers  
+- To list all containers, including stopped ones, use `docker ps -a`
+
+---
+
+### 1️⃣4️⃣ What is the purpose of `docker exec`?  
+- **`docker exec`** allows you to **execute commands** inside a running container  
+```bash
+docker exec -it container_name bash
+```
+
+---
+
+### 1️⃣5️⃣ How do you remove unused Docker images, containers, and volumes?  
+- Use the following commands to remove unused resources:  
+```bash
+docker system prune -a  # Remove unused containers, images, and networks
+docker volume prune     # Remove unused volumes
+docker container prune  # Remove stopped containers
+```
+
+---
+
+### 1️⃣6️⃣ How do you expose a port from a Docker container?  
+- Use the `-p` flag to map a port from the container to the host  
+```bash
+docker run -p 8080:80 my-container
+```
+
+---
+
+### 1️⃣7️⃣ What is the Docker daemon?  
+- The **Docker daemon** is a background service that manages Docker containers, images, networks, and volumes  
+- It runs on the host machine and communicates with Docker clients via REST APIs
+
+---
+
+### 1️⃣8️⃣ What is Docker networking?  
+- Docker provides multiple networking options for containers:  
+  - **Bridge** (default)  
+  - **Host**  
+  - **None**  
+  - **Custom networks**
+
+---
+
+### 1️⃣9️⃣ How do you debug a Docker container?  
+- Use commands like `docker logs`, `docker exec`, and `docker inspect` to check container logs, run commands inside the container, and inspect container configuration
+
+---
+
+### 2️⃣0️⃣ What is multi-stage build in Docker?  
+- **Multi-stage builds** allow you to **use multiple FROM statements** in a Dockerfile to create intermediate images, reducing the final image size and improving efficiency
+
+---
+
+# 📂 **Kubernetes**
+
+---
+
+### 1️⃣ What is Kubernetes?  
+- **Kubernetes** is an **open-source container orchestration platform** that automates the deployment, scaling, and management of containerized applications  
+- Provides a framework for running distributed systems resiliently, scaling applications as needed
+
+---
+
+### 2️⃣ What are Pods in Kubernetes?  
+- A **Pod** is the smallest and simplest unit in Kubernetes that represents a **single instance of a running process** in a cluster  
+- A Pod can contain one or more containers that share the same network namespace and storage volumes
+
+---
+
+### 3️⃣ What is a Kubernetes Node?  
+- A **Node** is a physical or virtual machine in a Kubernetes cluster  
+- It runs **Kubernetes components** and is responsible for running Pods and providing network connectivity to the containers
+
+---
+
+### 4️⃣ What is a ReplicaSet in Kubernetes?  
+- A **ReplicaSet** ensures that a specified number of identical Pods are running at any given time  
+- It maintains the **desired state** of the application and automatically creates or deletes Pods to meet that state
+
+---
+
+### 5️⃣ What is a Deployment in Kubernetes?  
+- A **Deployment** provides declarative updates to Pods and ReplicaSets  
+- Manages the lifecycle of Pods, allowing for **rolling updates** and easy rollbacks
+
+---
+
+### 6️⃣ What is a Service in Kubernetes?  
+- A **Service** is an abstraction that defines a logical set of Pods and a policy by which to access them  
+- It enables communication between Pods and other external or internal services
+
+---
+
+### 7️⃣ What is a ConfigMap in Kubernetes?  
+- A **ConfigMap** is an API object used to store non-confidential data in key-value pairs  
+- It can be used to store configuration settings that are consumed by Pods
+
+---
+
+### 8️⃣ What is a Secret in Kubernetes?  
+- A **Secret** is similar to a ConfigMap but is intended for **storing sensitive information** like passwords, OAuth tokens, or SSH keys  
+- Secrets are base64 encoded, but they are not automatically encrypted
+
+---
+
+### 9️⃣ What is a Namespace in Kubernetes?  
+- A **Namespace** is a way to divide cluster resources between multiple users or applications  
+- Useful for organizing resources and providing a scope for names (e.g., `dev`, `prod`, `test` environments)
+
+---
+
+### 🔟 What is Helm in Kubernetes?  
+- **Helm** is a package manager for Kubernetes that allows you to define, install, and upgrade applications using **charts**  
+- A **chart** is a package of pre-configured Kubernetes resources
+
+---
+
+### 1️⃣1️⃣ What is a StatefulSet in Kubernetes?  
+- A **StatefulSet** is used to manage **stateful applications** (e.g., databases) that require persistent storage and ordered deployment and scaling
+
+---
+
+### 1️⃣2️⃣ What is a DaemonSet in Kubernetes?  
+- A **DaemonSet** ensures that a copy of a Pod is running on each Node in the cluster, or on a subset of Nodes  
+- It is commonly used for **background processes** like logging or monitoring
+
+---
+
+### 1️⃣3️⃣ What is the difference between Deployment and StatefulSet?  
+- **Deployment**: Used for stateless applications, where Pods are interchangeable  
+- **StatefulSet**: Used for stateful applications, where Pods have stable identities and persistent storage
+
+---
+
+### 1️⃣4️⃣ What is the role of the Kubernetes Scheduler?  
+- The **Kubernetes Scheduler** is responsible for assigning Pods to Nodes in the cluster based on resource availability and other constraints (e.g., node selectors)
+
+---
+
+### 1️⃣5️⃣ What is the role of the Kubernetes Controller Manager?  
+- The **Controller Manager** is responsible for running controllers that monitor the state of the cluster and make changes to bring it closer to the desired state (e.g., scaling, ensuring Pods are running)
+
+---
+
+### 1️⃣6️⃣ What is Horizontal Pod Autoscaling in Kubernetes?  
+- **Horizontal Pod Autoscaling** automatically scales the number of Pods in a Deployment or ReplicaSet based on observed CPU utilization or custom metrics
+
+---
+
+### 1️⃣7️⃣ What is a Kubernetes Ingress?  
+- **Ingress** is an API object that manages external access to services, typically HTTP  
+- Provides **load balancing**, SSL termination, and name-based virtual hosting
+
+---
+
+### 1️⃣8️⃣ How does Kubernetes handle networking between Pods?  
+- Kubernetes provides a **flat networking model**, where each Pod gets its own IP address, and Pods can communicate with each other directly across Nodes
+
+---
+
+### 1️⃣9️⃣ What is a Kubernetes Volume?  
+- A **Volume** is a directory that contains data, accessible to containers in a Pod  
+- Volumes persist across container restarts and can be shared between containers
+
+---
+
+### 2️⃣0️⃣ What is the difference between `kubectl apply` and `kubectl create`?  
+- **`kubectl apply`**: Used to create or update resources declaratively based on a file (idempotent)  
+- **`kubectl create`**: Used to create resources without updating them if they already exist
+
+---
+
+# 📂 **Kafka**
+
+---
+
+### 1️⃣ What is Apache Kafka?  
+- **Apache Kafka** is an open-source **distributed event streaming platform** used for building real-time data pipelines and streaming applications  
+- Kafka is used for **high-throughput, low-latency messaging** and can handle massive amounts of data in real-time
+
+---
+
+### 2️⃣ What are Kafka producers and consumers?  
+- **Producer**: A Kafka producer sends messages (records) to Kafka topics  
+- **Consumer**: A Kafka consumer reads messages from Kafka topics
+
+---
+
+### 3️⃣ What is a Kafka topic?  
+- A **topic** is a logical channel to which messages are published by producers and from which consumers can read  
+- Topics are **partitioned** for scalability and parallel processing
+
+---
+
+### 4️⃣ What is a Kafka partition?  
+- A **partition** is a unit of parallelism in Kafka that allows messages within a topic to be distributed across multiple Kafka brokers  
+- Partitions ensure data is **distributed** and processed in parallel, improving scalability
+
+---
+
+### 5️⃣ What is a Kafka broker?  
+- A **broker** is a Kafka server that stores data and serves clients  
+- Kafka brokers handle the distribution and replication of data across the Kafka cluster
+
+---
+
+### 6️⃣ What is a Kafka consumer group?  
+- A **consumer group** is a group of Kafka consumers that jointly consume messages from one or more Kafka topics  
+- Kafka ensures that each message in a topic partition is consumed by **only one member** of the consumer group
+
+---
+
+### 7️⃣ What is Kafka's offset?  
+- The **offset** is a unique identifier for each message within a Kafka partition  
+- It allows consumers to track the position of the last read message and resume consumption from that point
+
+---
+
+### 8️⃣ What is Kafka replication?  
+- **Replication** is the process of maintaining multiple copies of Kafka data across different brokers for **fault tolerance** and **high availability**  
+- Each partition has one **leader** and multiple **replicas**
+
+---
+
+### 9️⃣ What is Kafka's Zookeeper?  
+- **Zookeeper** is a centralized service used by Kafka for **managing and coordinating** Kafka brokers in the cluster  
+- It handles tasks such as leader election and broker metadata management
+
+---
+
+### 🔟 What is Kafka Streams?  
+- **Kafka Streams** is a client library for building real-time, **stream processing applications** that can process data in Kafka topics  
+- Provides a simple API for **stateful** and **stateless** stream processing
+
+---
+
+### 1️⃣1️⃣ What is the difference between Kafka and RabbitMQ?  
+- **Kafka**: Designed for **high-throughput**, **event-driven** architectures, and scalable data pipelines  
+- **RabbitMQ**: Primarily used for **message queueing**, supports message acknowledgement, and is more suitable for smaller-scale systems with complex routing
+
+---
+
+### 1️⃣2️⃣ What is the difference between Kafka's producer and consumer?  
+- **Producer**: Sends messages to a Kafka topic  
+- **Consumer**: Reads messages from a Kafka topic
+
+---
+
+### 1️⃣3️⃣ What is message retention in Kafka?  
+- **Message retention** refers to the duration for which Kafka stores messages in a topic  
+- Kafka allows configuring the retention time based on the **time** or **size** of messages in a topic
+
+---
+
+### 1️⃣4️⃣ What is Kafka's "at least once" message delivery semantics?  
+- **"At least once" delivery semantics** ensures that each message is delivered to the consumer at least once  
+- This may result in **duplicate messages**, so the consumer should handle deduplication
+
+---
+
+### 1️⃣5️⃣ What is the Kafka Consumer Rebalance?  
+- **Consumer rebalance** occurs when a Kafka consumer group changes the assignment of partitions to consumers  
+- This can happen when a new consumer joins or leaves the group, or when the topic's partitions change
+
+---
+
+### 1️⃣6️⃣ What is Kafka Connect?  
+- **Kafka Connect** is a framework for **integrating** Kafka with **external systems** (e.g., databases, file systems, etc.)  
+- It allows for **easy import/export** of data to/from Kafka using pre-built or custom connectors
+
+---
+
+### 1️⃣7️⃣ How does Kafka ensure fault tolerance?  
+- Kafka ensures fault tolerance through **replication** of data across multiple brokers  
+- Each partition has one leader and multiple replicas, so if a broker fails, the replicas can take over
+
+---
+
+### 1️⃣8️⃣ How does Kafka achieve high throughput?  
+- Kafka achieves high throughput by storing data in **append-only logs**, batching messages, and using a highly efficient **disk storage** mechanism  
+- Kafka also uses **compression** to reduce network usage
+
+---
+
+### 1️⃣9️⃣ What are Kafka consumer acknowledgments?  
+- Kafka consumers use **offsets** to acknowledge the messages they have read  
+- Consumers can commit offsets manually or automatically after processing messages
+
+---
+
+### 2️⃣0️⃣ How do you scale a Kafka cluster?  
+- Kafka can be scaled by adding more **brokers** and **partitions**  
+- Scaling consumers is done by adding more consumers to a **consumer group**
+
+---
+
+# 📂 **REST API**
+
+---
+
+### 1️⃣ What is a REST API?  
+- **REST** (Representational State Transfer) is an architectural style for designing networked applications  
+- A **REST API** allows different software applications to communicate over HTTP using standard HTTP methods (GET, POST, PUT, DELETE, etc.)
+
+---
+
+### 2️⃣ What are the key principles of REST?  
+1. **Statelessness**: Every request from a client must contain all the information needed to understand and process the request  
+2. **Client-Server Architecture**: The client and server should be separate, with the client focusing on the user interface and the server managing data and logic  
+3. **Cacheability**: Responses must be explicitly marked as cacheable or non-cacheable  
+4. **Uniform Interface**: A uniform and consistent interface for interacting with resources  
+5. **Layered System**: REST APIs should be designed to work across different layers, allowing for intermediate components like proxies, load balancers, etc.  
+6. **Code on Demand (optional)**: Servers can extend functionality by providing executable code (e.g., JavaScript)
+
+---
+
+### 3️⃣ What are HTTP methods and how are they used in REST?  
+- **GET**: Retrieve data from the server  
+- **POST**: Submit data to be processed (often used to create resources)  
+- **PUT**: Update a resource on the server  
+- **DELETE**: Remove a resource from the server  
+- **PATCH**: Partially update a resource on the server
+
+---
+
+### 4️⃣ What is the difference between PUT and PATCH?  
+- **PUT**: Replaces an entire resource with a new version  
+- **PATCH**: Applies partial updates to a resource
+
+---
+
+### 5️⃣ What is the status code 200 used for in REST API?  
+- **200 OK**: The request was successful, and the server has returned the requested data or performed the requested operation
+
+---
+
+### 6️⃣ What is the difference between 4xx and 5xx status codes?  
+- **4xx (Client Errors)**: These codes indicate issues with the client's request, such as **400 Bad Request**, **401 Unauthorized**, or **404 Not Found**  
+- **5xx (Server Errors)**: These codes indicate issues with the server while processing the request, such as **500 Internal Server Error** or **503 Service Unavailable**
+
+---
+
+### 7️⃣ What is the difference between REST and SOAP?  
+- **REST**: Lightweight, uses standard HTTP methods, supports multiple formats (JSON, XML), stateless, and widely used for web services  
+- **SOAP**: A protocol that relies on XML for communication, has strict messaging standards, requires more overhead, and is more secure and reliable but less flexible than REST
+
+---
+
+### 8️⃣ What are some common HTTP status codes used in REST APIs?  
+- **200 OK**: Successful request  
+- **201 Created**: Resource created successfully  
+- **400 Bad Request**: Malformed request or missing parameters  
+- **401 Unauthorized**: Authentication required  
+- **403 Forbidden**: The client does not have permission to access the resource  
+- **404 Not Found**: The resource could not be found  
+- **500 Internal Server Error**: A general server error
+
+---
+
+### 9️⃣ What is HATEOAS in REST?  
+- **HATEOAS** (Hypermedia as the Engine of Application State) is a constraint of REST that allows a client to interact with an API entirely through hyperlinks provided dynamically by the server  
+- The client does not need to know the exact structure of the API beforehand
+
+---
+
+### 🔟 What is RESTful design?  
+- RESTful design refers to designing an API that adheres to the principles of **REST**  
+- Key characteristics of RESTful APIs include using HTTP methods correctly, designing intuitive URIs (Uniform Resource Identifiers), and keeping interactions stateless
+
+---
+
+### 1️⃣1️⃣ What are the advantages of REST APIs?  
+- **Scalability**: Stateless nature allows REST APIs to scale easily  
+- **Flexibility**: REST APIs can use various data formats like XML, JSON, and more  
+- **Performance**: By leveraging HTTP, REST APIs are lightweight and fast  
+- **Cacheable**: Responses can be cached to improve performance
+
+---
+
+### 1️⃣2️⃣ What is API versioning in REST?  
+- **API versioning** is the practice of managing changes to an API without breaking existing clients  
+- Common strategies for versioning include:
+  - **URL versioning** (e.g., `/api/v1/resource`)
+  - **Header versioning** (e.g., `Accept: application/vnd.myapi.v1+json`)
+
+---
+
+### 1️⃣3️⃣ What is Cross-Origin Resource Sharing (CORS) in REST APIs?  
+- **CORS** is a security feature implemented by browsers that restricts web pages from making requests to a domain other than the one that served the web page  
+- REST APIs need to explicitly enable CORS to allow requests from different origins
+
+---
+
+### 1️⃣4️⃣ What are some common authentication methods in REST APIs?  
+- **Basic Authentication**: Sends the username and password in the request header (not recommended for production)  
+- **Bearer Token (JWT)**: Uses a token (e.g., JSON Web Token) for authentication  
+- **OAuth**: A third-party authorization protocol for secure delegated access
+
+---
+
+### 1️⃣5️⃣ What is idempotency in REST?  
+- An operation is **idempotent** if performing it multiple times has the same effect as performing it once  
+- HTTP methods like **GET**, **PUT**, and **DELETE** are idempotent, meaning multiple identical requests will not have side effects
+
+---
+
+### 1️⃣6️⃣ What are the common REST API best practices?  
+- **Use HTTP methods correctly**: GET, POST, PUT, DELETE, etc.  
+- **Design clean and intuitive URLs**: Use plural nouns and avoid unnecessary verbs  
+- **Provide appropriate status codes**: Return 404 for not found, 400 for bad request, etc.  
+- **Use pagination** for large datasets  
+- **Support filtering and sorting** through query parameters
+
+---
+
+# 📂 **Design Patterns**
+
+---
+
+### 1️⃣ What is a design pattern?  
+- A **design pattern** is a general repeatable solution to a commonly occurring problem in software design  
+- It provides a template for solving problems in software architecture and design
+
+---
+
+### 2️⃣ What are the types of design patterns?  
+- **Creational Patterns**: Deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. Example: Singleton, Factory Method, Abstract Factory, Builder, Prototype  
+- **Structural Patterns**: Deal with object composition, creating relationships between objects to form larger structures. Example: Adapter, Decorator, Composite, Proxy, Flyweight, Facade  
+- **Behavioral Patterns**: Focus on communication between objects, what happens between objects and how the responsibility is assigned. Example: Observer, Strategy, Command, State, Chain of Responsibility, Visitor, Iterator
+
+---
+
+### 3️⃣ What is the Singleton design pattern?  
+- The **Singleton** pattern ensures that a class has only one instance and provides a global point of access to it  
+- It is commonly used for database connections, logging, thread pool management, etc.  
+- Implementation usually involves private constructor and a static method to retrieve the instance
+
+---
+
+### 4️⃣ What is the Factory Method design pattern?  
+- The **Factory Method** pattern defines an interface for creating an object, but it allows subclasses to alter the type of objects that will be created  
+- It helps when you don't know beforehand what class you need to create and need flexibility to change the object type
+
+---
+
+### 5️⃣ What is the Abstract Factory design pattern?  
+- The **Abstract Factory** pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes  
+- It's useful when the system needs to be independent of how its objects are created and composed
+
+---
+
+### 6️⃣ What is the Builder design pattern?  
+- The **Builder** pattern is used to construct a complex object step by step  
+- It separates the construction of a complex object from its representation, allowing the same construction process to create different representations
+
+---
+
+### 7️⃣ What is the Prototype design pattern?  
+- The **Prototype** pattern is used to create a duplicate object or clone from the original object  
+- This pattern is particularly useful when the cost of creating a new object is expensive and cloning an existing object is more efficient
+
+---
+
+### 8️⃣ What is the Adapter design pattern?  
+- The **Adapter** pattern allows incompatible interfaces to work together  
+- It acts as a bridge between two incompatible interfaces by converting one interface to another that a client expects
+
+---
+
+### 9️⃣ What is the Decorator design pattern?  
+- The **Decorator** pattern allows behavior to be added to an individual object dynamically without affecting the behavior of other objects from the same class  
+- It's often used to extend the functionalities of classes in a flexible and reusable way
+
+---
+
+### 🔟 What is the Composite design pattern?  
+- The **Composite** pattern allows you to compose objects into tree-like structures to represent part-whole hierarchies  
+- It lets clients treat individual objects and compositions of objects uniformly
+
+---
+
+### 1️⃣1️⃣ What is the Proxy design pattern?  
+- The **Proxy** pattern provides a surrogate or placeholder for another object  
+- It is often used to control access to the original object by adding functionality such as lazy loading, access control, or logging
+
+---
+
+### 1️⃣2️⃣ What is the Flyweight design pattern?  
+- The **Flyweight** pattern reduces the number of objects created by sharing objects that are similar in nature  
+- It’s useful when many objects are needed, but they share common properties
+
+---
+
+### 1️⃣3️⃣ What is the Facade design pattern?  
+- The **Facade** pattern provides a simplified interface to a complex subsystem  
+- It is used to hide the complexities of a system and provide a higher-level interface to the client
+
+---
+
+### 1️⃣4️⃣ What is the Observer design pattern?  
+- The **Observer** pattern defines a one-to-many dependency between objects, where a change in one object (subject) notifies all its dependents (observers)  
+- It is commonly used in implementing event handling systems
+
+---
+
+### 1️⃣5️⃣ What is the Strategy design pattern?  
+- The **Strategy** pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable  
+- It allows a client to choose the algorithm at runtime, making the algorithm independent of the client that uses it
+
+---
+
+### 1️⃣6️⃣ What is the Command design pattern?  
+- The **Command** pattern encapsulates a request as an object, allowing the parameterization of clients with queues, requests, and operations  
+- It decouples the sender and receiver of a request, enabling delayed execution or undo functionality
+
+---
+
+### 1️⃣7️⃣ What is the State design pattern?  
+- The **State** pattern allows an object to alter its behavior when its internal state changes  
+- The object will appear to change its class as it transitions between states
+
+---
+
+### 1️⃣8️⃣ What is the Chain of Responsibility design pattern?  
+- The **Chain of Responsibility** pattern allows a request to be passed along a chain of handlers  
+- Each handler in the chain processes the request or passes it on to the next handler, enabling dynamic change of processing behavior
+
+---
+
+### 1️⃣9️⃣ What is the Visitor design pattern?  
+- The **Visitor** pattern lets you define new operations on elements of an object structure without changing the classes of the elements  
+- It is useful when you need to perform operations across a set of objects that have different types
+
+---
+
+### 2️⃣0️⃣ What is the Iterator design pattern?  
+- The **Iterator** pattern allows sequential access to elements of a collection without exposing the underlying structure of the collection  
+- It provides a standard way to iterate over elements in a collection
+
+---
+
+# 📂 **Java Security**
+
+---
+
+### 1️⃣ What is Java Security?  
+- **Java Security** is a set of mechanisms that ensure secure execution of Java programs, ensuring confidentiality, integrity, and availability of resources  
+- It includes measures like code signing, encryption, authentication, and access control
+
+---
+
+### 2️⃣ What are the key components of Java Security?  
+- **Authentication**: Verifying the identity of users, systems, or services  
+- **Authorization**: Ensuring the authenticated user has permission to access a resource  
+- **Confidentiality**: Protecting data from unauthorized access using encryption  
+- **Integrity**: Ensuring the data remains unaltered during transmission or storage  
+- **Non-repudiation**: Ensuring that a party cannot deny the authenticity of their actions or communications
+
+---
+
+### 3️⃣ What is the Java Security Manager?  
+- The **Java Security Manager** is a security policy enforcement mechanism in the Java runtime environment  
+- It controls access to system resources such as file I/O, network access, and shared memory, based on permissions granted to the code running in the JVM
+
+---
+
+### 4️⃣ What is the Java Cryptography Architecture (JCA)?  
+- The **Java Cryptography Architecture (JCA)** is a set of APIs provided by Java for implementing cryptographic operations like encryption, decryption, key management, and message digests  
+- JCA is provider-based, meaning it can use different providers to implement various cryptographic algorithms
+
+---
+
+### 5️⃣ What are some common cryptographic algorithms used in Java?  
+- **Symmetric Encryption**: AES (Advanced Encryption Standard), DES (Data Encryption Standard), 3DES (Triple DES)  
+- **Asymmetric Encryption**: RSA, ECC (Elliptic Curve Cryptography)  
+- **Hash Functions**: MD5, SHA-1, SHA-256, SHA-512  
+- **Digital Signatures**: RSA, DSA (Digital Signature Algorithm)
+
+---
+
+### 6️⃣ What is a digital signature, and how does it work?  
+- A **digital signature** is a mathematical scheme for verifying the authenticity and integrity of a message, software, or digital document  
+- It uses asymmetric encryption: the sender signs the data with their private key, and the receiver can verify the signature using the sender’s public key
+
+---
+
+### 7️⃣ What is Java KeyStore (JKS)?  
+- The **Java KeyStore (JKS)** is a repository for storing cryptographic keys and certificates  
+- It is used to store private keys, public keys, and certificates required for various security-related activities such as SSL/TLS and digital signatures
+
+---
+
+### 8️⃣ What is the difference between symmetric and asymmetric encryption?  
+- **Symmetric encryption** uses the same key for both encryption and decryption (e.g., AES, DES)  
+- **Asymmetric encryption** uses a pair of keys: a public key for encryption and a private key for decryption (e.g., RSA)
+
+---
+
+### 9️⃣ What is SSL/TLS, and how does it work in Java?  
+- **SSL (Secure Sockets Layer)** and **TLS (Transport Layer Security)** are protocols used to secure data transmission over networks  
+- Java uses the **JSSE (Java Secure Socket Extension)** API to implement SSL/TLS, providing secure communication channels via `SSLSocket` and `SSLServerSocket`
+
+---
+
+### 🔟 What is the purpose of the `java.security` package?  
+- The **`java.security`** package provides a variety of security-related classes and interfaces for cryptographic operations, key management, and security policies  
+- It allows developers to create secure applications by managing security providers, permissions, and authentication mechanisms
+
+---
+
+### 1️⃣1️⃣ What is a secure coding practice in Java?  
+- **Secure coding practices** are techniques and practices that help developers write code that is resistant to security vulnerabilities  
+- Examples: Input validation, output encoding, SQL injection prevention, using secure communication protocols (TLS/SSL), not hardcoding credentials, and using secure password hashing algorithms
+
+---
+
+### 1️⃣2️⃣ What is a Public Key Infrastructure (PKI)?  
+- **PKI (Public Key Infrastructure)** is a framework for managing public-key encryption, digital signatures, and certificates  
+- It includes **Certificate Authorities (CA)** for issuing digital certificates, **Public and Private Keys**, and **Certificate Revocation Lists (CRLs)**
+
+---
+
+### 1️⃣3️⃣ How does the Java Security model differ in terms of access control?  
+- Java has a **granular access control model** using the **Security Manager** and **Permissions**. It uses the **AccessControlContext** class to grant or deny access to resources  
+- It uses a **policy file** to set rules defining which classes can access which resources (files, network, etc.)
+
+---
+
+### 1️⃣4️⃣ What is the `java.security.PrivilegedAction` and why is it used?  
+- **`PrivilegedAction`** is a class used for executing a block of code with elevated privileges  
+- It is typically used in situations where code needs to perform sensitive operations like accessing system resources, but without exposing sensitive methods to the rest of the application
+
+---
+
+### 1️⃣5️⃣ What are the risks of hardcoding sensitive information in Java applications?  
+- Hardcoding sensitive data such as passwords, API keys, or database credentials exposes the application to **data breaches**  
+- Attackers can reverse-engineer the application or gain access to source code to extract sensitive information. It is recommended to use **environment variables** or **external configuration files** for storing sensitive data
+
+---
+
+### 1️⃣6️⃣ How do you prevent SQL Injection in Java applications?  
+- Use **Prepared Statements** or **Parameterized Queries** to safely include user inputs in SQL queries  
+- Avoid concatenating strings to form SQL queries, as this opens the door to SQL Injection attacks
+
+---
+
+### 1️⃣7️⃣ What is Cross-Site Scripting (XSS), and how do you mitigate it in Java applications?  
+- **Cross-Site Scripting (XSS)** is a vulnerability where an attacker injects malicious scripts into web pages viewed by users  
+- Mitigate it by **validating and sanitizing inputs**, **encoding output**, and using Java libraries like **OWASP Java HTML Sanitizer** or frameworks like **JSF**, **Spring Security** that automatically protect against XSS
+
+---
+
+# 📂 **JVM Internals and Performance Tuning**
+
+---
+
+### 1️⃣ What is the **Java Virtual Machine (JVM)**, and what are its components?  
+- The **JVM** is a virtual machine that runs Java bytecode and provides the environment for Java programs to run.  
+- **Key components**:
+  - **Classloader**: Loads classes into the JVM.
+  - **Runtime Data Areas**: Includes the heap, stack, method area, program counter, and native method stack.
+  - **Execution Engine**: Responsible for executing the bytecode.
+  - **Garbage Collector**: Automatically manages memory by reclaiming unused objects.
+
+---
+
+### 2️⃣ How does **Garbage Collection (GC)** work in Java?  
+- **Garbage Collection (GC)** is the process of automatically finding and disposing of objects that are no longer reachable by any part of the program.  
+- It helps in memory management by preventing memory leaks and freeing up space in the heap.  
+- **GC Algorithms**:  
+  - **Serial GC**  
+  - **Parallel GC**  
+  - **G1 Garbage Collector** (used for large heaps)
+  - **ZGC** and **Shenandoah** (low-latency GCs)
+
+---
+
+### 3️⃣ What are the different memory areas in the JVM?  
+- **Heap**: Stores objects created by the program. Divided into **young generation**, **old generation**, and **permanent generation** (or **metaspace** in Java 8+).
+- **Stack**: Stores method frames, local variables, and partial results.
+- **Method Area**: Stores class-level data such as metadata, class definitions, and static variables.
+- **Program Counter Register**: Keeps track of the current instruction being executed.
+- **Native Method Stack**: Contains native methods used by the JVM for interfacing with the operating system.
+
+---
+
+### 4️⃣ What is the **difference between stack memory and heap memory** in JVM?  
+- **Stack Memory**:  
+  - Stores **local variables** and method calls.
+  - Memory is managed in a **Last-In-First-Out (LIFO)** manner.
+  - Memory is **automatically reclaimed** when methods return.
+- **Heap Memory**:  
+  - Stores **objects** created by the program.
+  - Memory must be manually reclaimed by the garbage collector.
+  - Used for objects that need to be shared across methods or classes.
+
+---
+
+### 5️⃣ How do you perform **JVM performance tuning**?  
+- **Tuning GC**: Adjust the heap size and garbage collector type to suit the application's needs. Use JVM flags like `-Xms` (initial heap size) and `-Xmx` (maximum heap size).
+- **Thread Tuning**: Optimize the number of threads and the thread pool size.  
+- **JVM flags**:  
+  - `-XX:+UseG1GC`: To enable the G1 Garbage Collector.  
+  - `-XX:+PrintGCDetails`: To view GC logs.
+  - `-Xmn`: To set the size of the young generation.
+  
+---
+
+### 6️⃣ What is **JVM tuning** using **JVM options**?  
+- **JVM Options** are flags used to configure the behavior of the JVM.  
+- Examples include:  
+  - **Memory Settings**:  
+    - `-Xms` to set the initial heap size.  
+    - `-Xmx` to set the maximum heap size.  
+  - **Garbage Collection**:  
+    - `-XX:+UseG1GC` to enable the G1 Garbage Collector.  
+    - `-XX:+PrintGCDetails` to enable detailed GC logging.
+
+---
+
+### 7️⃣ What is the **HotSpot JVM**?  
+- The **HotSpot JVM** is the default JVM implementation in Java.  
+- It uses **just-in-time (JIT) compilation** to improve performance by compiling bytecode into native machine code at runtime.
+
+---
+
+### 8️⃣ What are the **Java Memory Model (JMM)** concepts?  
+- The **Java Memory Model (JMM)** defines how threads interact through memory and what behaviors are allowed when two threads access shared variables.  
+- Key concepts include:  
+  - **Visibility**: Changes made by one thread may not be visible to other threads unless synchronized properly.
+  - **Atomicity**: Operations on a variable are atomic if they cannot be interrupted.
+  - **Ordering**: The order in which instructions are executed in a multi-threaded environment.
+
+---
+
+### 9️⃣ What is **Heap Dump** in JVM, and how is it useful?  
+- A **Heap Dump** is a snapshot of the memory in the heap at a specific point in time.  
+- It is useful for debugging memory leaks or analyzing memory usage in an application.
+
+---
+
+### 🔟 What is the **difference between Minor GC and Full GC**?  
+- **Minor GC**: Occurs when the **young generation** is full. It is a **quick** process and only affects the young generation.
+- **Full GC**: Occurs when the entire heap (young + old generation) needs to be garbage collected. It is a **slower** process.
+
+---
+
+### 1️⃣1️⃣ What are **JVM tuning tools** used for monitoring and performance analysis?  
+- **JConsole**: A monitoring tool that provides real-time data about JVM performance.
+- **VisualVM**: A tool for profiling and monitoring JVM applications.
+- **Java Flight Recorder**: A tool for collecting diagnostic data in a production environment.
+- **GC Logs**: Used to analyze garbage collection behavior.
+
+---
+
+### 1️⃣2️⃣ How do you monitor **JVM heap usage**?  
+- Tools like **JConsole**, **VisualVM**, and **JMX** can monitor heap usage in real time.  
+- JVM options like `-XX:+PrintGCDetails` provide details of the garbage collection process, including heap usage statistics.
+
+---
+
+### 1️⃣3️⃣ What is **JIT Compilation** in Java?  
+- **JIT (Just-In-Time)** compilation refers to the compilation of bytecode into native machine code at runtime to improve performance.  
+- This process helps avoid interpretation overhead and speeds up execution.
+
+---
+
+### 1️⃣4️⃣ How would you deal with **Memory Leaks** in a Java application?  
+- Use **profiling tools** like **VisualVM**, **JProfiler**, or **Eclipse MAT** to find memory leaks.
+- Review code for objects that are no longer in use but are still being referenced.
+- Ensure proper resource cleanup (e.g., closing database connections, streams, etc.).
+
+---
+
+### 1️⃣5️⃣ What is **Garbage Collection** tuning in the context of **JVM performance**?  
+- **GC tuning** involves adjusting parameters like **heap size**, **young generation size**, and **garbage collector types** (e.g., G1, Parallel GC).
+- Example tuning flags:  
+  - `-Xms` (initial heap size), `-Xmx` (maximum heap size), `-XX:+UseG1GC` (to use G1 Garbage Collector).
+ 
+---
+
+# 📂 **Concurrency and Multithreading**
+
+---
+
+### 1️⃣ What is the difference between **concurrency** and **parallelism** in Java?  
+- **Concurrency**: Refers to the ability of a program to handle multiple tasks at once, but not necessarily simultaneously. It is about managing multiple tasks over time, potentially executing them in an interleaved manner on a single or multiple threads.
+- **Parallelism**: Refers to executing multiple tasks **simultaneously** in a program, typically on multiple processors or cores.
+
+---
+
+### 2️⃣ What is the **Thread** class in Java?  
+- The **Thread** class represents a thread of execution in a Java program.  
+- You can create a thread by either:  
+  - Extending the `Thread` class and overriding its `run()` method.
+  - Implementing the `Runnable` interface and passing it to a `Thread` object.
+
+---
+
+### 3️⃣ How do you create and start a thread in Java?  
+```java
+// Method 1: By extending Thread class
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+
+MyThread thread = new MyThread();
+thread.start();
+
+// Method 2: By implementing Runnable interface
+class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Runnable is running");
+    }
+}
+
+Thread thread = new Thread(new MyRunnable());
+thread.start();
+```
+
+---
+
+### 4️⃣ What is the **Runnable** interface, and how is it different from **Thread**?  
+- **Runnable** is a functional interface that represents a task that can be executed concurrently.  
+- **Thread** is a concrete class that represents a thread, while **Runnable** is just a task to be executed by a thread.
+- **Runnable** allows for better **resource sharing** as you can pass the same instance of `Runnable` to multiple threads.
+
+---
+
+### 5️⃣ What is **synchronization** in Java, and why is it important?  
+- **Synchronization** ensures that only one thread can access a resource (e.g., method or block of code) at a time.
+- It is important to prevent **race conditions**, where multiple threads trying to modify shared data simultaneously can lead to inconsistent results.
+```java
+public synchronized void myMethod() {
+    // synchronized code
+}
+```
+
+---
+
+### 6️⃣ What is the **difference between synchronized method and synchronized block**?  
+- **Synchronized Method**: The entire method is synchronized, meaning only one thread can execute it at a time.
+  ```java
+  public synchronized void method() {
+      // code
+  }
+  ```
+- **Synchronized Block**: Only a specific portion of the code inside a method is synchronized, allowing more control over which part of the method is synchronized.
+  ```java
+  public void method() {
+      synchronized (lockObject) {
+          // synchronized code
+      }
+  }
+  ```
+
+---
+
+### 7️⃣ What is a **deadlock** in Java, and how can you prevent it?  
+- **Deadlock** occurs when two or more threads are blocked indefinitely because each thread is waiting for a resource held by the other.
+- **Prevention techniques**:
+  - Always acquire locks in a consistent order.
+  - Use **tryLock** with a timeout to avoid waiting indefinitely.
+  - Use **lock ordering** to ensure that threads acquire locks in the same order.
+
+---
+
+### 8️⃣ What is the **Executor Framework** in Java?  
+- The **Executor Framework** provides a higher-level replacement for the traditional way of managing threads. It separates task submission from the details of how each task will be executed.
+- Key components:
+  - **ExecutorService**: An interface that provides methods for managing and controlling thread pools.
+  - **ThreadPoolExecutor**: A concrete implementation of `ExecutorService`.
+
+---
+
+### 9️⃣ What are **Callable** and **Future** interfaces in Java?  
+- **Callable** is similar to **Runnable**, but it can return a result or throw an exception.
+- **Future** represents the result of an asynchronous computation, allowing you to retrieve the result of a **Callable** or **Runnable** task.
+```java
+ExecutorService executor = Executors.newSingleThreadExecutor();
+Callable<Integer> task = () -> 5 + 3;
+Future<Integer> future = executor.submit(task);
+Integer result = future.get();  // returns 8
+```
+
+---
+
+### 🔟 What is the **ForkJoinPool** in Java?  
+- **ForkJoinPool** is a specialized thread pool designed for parallelism. It efficiently manages tasks that can be broken down into smaller subtasks (i.e., divide and conquer).
+- It uses a **work-stealing algorithm** to balance the load among threads.
+
+---
+
+### 1️⃣1️⃣ What is the **CountDownLatch** class, and how is it used?  
+- The **CountDownLatch** is a synchronization aid that allows one or more threads to wait until a set of operations being performed by other threads completes.
+- Example usage:
+```java
+CountDownLatch latch = new CountDownLatch(3);  // wait for 3 tasks to complete
+// Worker threads
+latch.countDown();  // Decrements the count
+latch.await();  // Wait until the count is 0
+```
+
+---
+
+### 1️⃣2️⃣ What is a **Semaphore** in Java?  
+- A **Semaphore** is a synchronization tool that controls access to a shared resource through the use of a counter.
+- It allows a specified number of threads to access a resource concurrently.
+```java
+Semaphore semaphore = new Semaphore(3);  // Allow 3 threads to access the resource
+semaphore.acquire();  // Acquire a permit
+semaphore.release();  // Release a permit
+```
+
+---
+
+### 1️⃣3️⃣ What is **Thread Safety** in Java?  
+- **Thread safety** refers to the ability of a class or method to function correctly when multiple threads access it simultaneously.
+- **Achieved through**:  
+  - Using **synchronized blocks/methods**.
+  - Using thread-safe classes from the **java.util.concurrent** package (e.g., `ConcurrentHashMap`, `CopyOnWriteArrayList`).
+
+---
+
+### 1️⃣4️⃣ What is the **volatile** keyword in Java?  
+- The **volatile** keyword ensures that a variable's value is always read from and written to the main memory, rather than being cached in a thread's local memory.
+- It is used to **ensure visibility** between threads, preventing one thread from working with stale data.
+
+---
+
+### 1️⃣5️⃣ What is **ThreadLocal** in Java?  
+- **ThreadLocal** provides thread-local variables, meaning each thread has its own independent copy of the variable.
+- It is useful when you want each thread to have its own instance of a variable, without the need for synchronization.
+
+Let's move on to the **Java Memory Model (JMM)** section.
+
+---
+
+# 📂 **Java Memory Model (JMM)**
+
+---
+
+### 1️⃣ What is the **Java Memory Model (JMM)**?  
+- The **Java Memory Model (JMM)** defines how threads interact through memory and how variables are read and written in a multi-threaded environment.
+- It ensures that Java programs exhibit predictable behavior when multiple threads access shared data concurrently.
+
+---
+
+### 2️⃣ What are the key principles of the **Java Memory Model**?  
+- **Visibility**: Changes made by one thread to a shared variable are visible to other threads.
+- **Atomicity**: A thread's actions on variables are atomic and indivisible.
+- **Ordering**: The JMM guarantees that statements are executed in a specified order unless otherwise indicated by synchronization mechanisms.
+
+---
+
+### 3️⃣ What are the **happens-before** and **happens-after** relationships in the context of JMM?  
+- **Happens-before**: A guarantee that one action (e.g., a write) happens before another action (e.g., a read) in a multithreaded environment.
+  - Example: A `synchronized` block ensures that changes made inside the block happen-before any reads after the block.
+- **Happens-after**: The opposite of happens-before, where an action (e.g., a read) happens after the corresponding write.
+
+---
+
+### 4️⃣ What is **volatile** in the context of JMM?  
+- The **volatile** keyword in Java ensures that the most recent value of a variable is always fetched from the main memory, rather than being cached in the local thread cache.
+- It guarantees **visibility** of changes made by one thread to other threads.
+- **Note**: Volatile does not guarantee atomicity for compound operations (e.g., increment).
+
+---
+
+### 5️⃣ What is the significance of **synchronized** in JMM?  
+- The **synchronized** keyword ensures that:
+  - A method or block of code can be accessed by only one thread at a time.
+  - The changes made by one thread are visible to other threads.
+  - The synchronization mechanism **establishes a happens-before relationship** between threads, ensuring that writes to shared variables are visible to other threads after synchronization.
+
+---
+
+### 6️⃣ What is the **acquire-release** semantics in JMM?  
+- The **acquire-release** semantics ensures that:
+  - A thread's **acquire** action (e.g., entering a synchronized block) happens-before its corresponding **release** action (e.g., exiting the synchronized block).
+  - This means that all actions done before the acquire action are visible to other threads after the release action.
+
+---
+
+### 7️⃣ What are **atomic variables** in Java?  
+- **Atomic variables** are variables that are accessed and updated atomically, meaning their value is updated without interference from other threads.
+- Java provides classes like `AtomicInteger`, `AtomicLong`, and `AtomicReference` in the `java.util.concurrent.atomic` package, which are designed to ensure atomicity for common operations like increment, compare-and-set, etc.
+
+---
+
+### 8️⃣ What is **reordering** in JMM, and how can it affect multi-threaded programs?  
+- **Reordering** refers to the reordering of instructions by the JVM or CPU for performance optimization.
+- While the JVM and hardware may reorder instructions for efficiency, the **happens-before** relationship in JMM ensures that reordering does not violate thread safety or produce inconsistent results.
+- Synchronization and `volatile` can be used to prevent or control reordering in critical sections.
+
+---
+
+### 9️⃣ What is the concept of **race conditions** in the Java Memory Model?  
+- A **race condition** occurs when two or more threads try to access and modify shared data concurrently without proper synchronization, leading to unpredictable results.
+- To avoid race conditions, synchronization mechanisms like `synchronized` blocks, `volatile` variables, or `java.util.concurrent` classes should be used to ensure correct visibility and atomicity.
+
+---
+
+### 🔟 What is the **final** keyword in Java with respect to JMM?  
+- The **final** keyword in Java ensures that:
+  - A field's value is **immutable** once initialized.
+  - If a field is declared as `final`, its value is guaranteed to be visible to all threads after the constructor of the object completes, ensuring proper **visibility** of the value across threads.
+
+---
+
+### 1️⃣1️⃣ What is the role of **happens-before relationship** in preventing thread interference in Java?  
+- The **happens-before relationship** establishes a strict ordering of actions in a multi-threaded program.  
+- It ensures that certain actions (like writing to a variable) are completed before others (like reading the variable), preventing **thread interference** where multiple threads modify shared data in conflicting ways.
+
+---
+
+### 1️⃣2️⃣ What is **Thread Interference** in Java, and how can it be avoided?  
+- **Thread Interference** occurs when multiple threads attempt to read/write to the same variable concurrently without proper synchronization, leading to inconsistent or incorrect data.
+- It can be avoided by:
+  - Using synchronization (`synchronized` blocks/methods).
+  - Using **atomic classes** (`AtomicInteger`, `AtomicReference`).
+  - Using **Locks** (`ReentrantLock`).
+
+---
+
+### 1️⃣3️⃣ What is the **Java Memory Model's impact on multi-core systems**?  
+- In a **multi-core system**, the JMM ensures that the behavior of Java programs is consistent across different cores.  
+- The JMM handles **visibility** and **ordering** issues that can arise in multi-core systems, ensuring that changes made by one thread on one core are visible to other threads running on different cores.
+
+---
+
+### 1️⃣4️⃣ How do you ensure **safe publication** of an object in Java?  
+- **Safe publication** refers to ensuring that an object is correctly shared between threads and is visible to them when they access it.
+- Safe publication can be achieved by:
+  - Using `volatile` variables.
+  - Initializing the object within a **synchronized block** or constructor.
+  - Using **final** fields.
+
+---
+
+### 1️⃣5️⃣ How does **double-checked locking** work, and how does JMM help in making it thread-safe?  
+- **Double-checked locking** is a pattern used to implement lazy initialization of resources in a thread-safe manner.
+- It involves checking if the resource is already initialized before acquiring a lock, and checking again after the lock is acquired.
+- In JMM, the `volatile` keyword ensures that the variable is correctly published to other threads without reordering or caching issues.
+
+---
+
+# 📂 **Section 20: JDBC and Database Connectivity**
+
+---
+
+### 1️⃣ What is **JDBC (Java Database Connectivity)**?  
+- **JDBC** is an API in Java that enables Java applications to interact with relational databases.
+- It provides a standard interface for connecting to databases, executing SQL queries, and handling result sets.
+
+---
+
+### 2️⃣ What are the different **JDBC Drivers** available?  
+- **Type 1**: JDBC-ODBC Bridge Driver – Uses ODBC to connect to the database.
+- **Type 2**: Native-API Driver – Directly uses the database's native API to connect.
+- **Type 3**: Network Protocol Driver – Uses a middle-tier server to communicate with the database.
+- **Type 4**: Thin Driver – Directly communicates with the database using its native protocol (most common).
+
+---
+
+### 3️⃣ What are the basic steps involved in connecting to a database using JDBC?  
+1. **Load the Driver**: Load the database driver class (e.g., `Class.forName("com.mysql.cj.jdbc.Driver");`).
+2. **Establish the Connection**: Use `DriverManager.getConnection()` to establish a connection to the database.
+3. **Create a Statement**: Use `Connection.createStatement()` to create a statement object.
+4. **Execute the Query**: Use the `executeQuery()` or `executeUpdate()` methods to run SQL queries.
+5. **Process the Result Set**: Retrieve results from a `ResultSet` object.
+6. **Close the Connections**: Close the `Statement`, `ResultSet`, and `Connection` objects to avoid resource leaks.
+
+---
+
+### 4️⃣ What is the difference between **executeQuery()**, **executeUpdate()**, and **execute()** methods in JDBC?  
+- **executeQuery()**: Used for executing SELECT queries and returns a `ResultSet`.
+- **executeUpdate()**: Used for executing INSERT, UPDATE, DELETE, or any DDL (Data Definition Language) statements. It returns the number of affected rows.
+- **execute()**: A general-purpose method that can execute any SQL query, returning a boolean indicating if the result is a `ResultSet`.
+
+---
+
+### 5️⃣ What is **Connection Pooling** in JDBC, and why is it important?  
+- **Connection Pooling** is the practice of reusing existing database connections instead of opening and closing new ones frequently.
+- It improves performance by reducing overhead and resource consumption.
+- Connection pools are managed by frameworks like **HikariCP**, **Apache DBCP**, or **C3P0**.
+
+---
+
+### 6️⃣ What is the **PreparedStatement** in JDBC, and how is it different from a **Statement**?  
+- **PreparedStatement** is used for executing parameterized SQL queries, where input parameters are bound to placeholders in the SQL statement.
+- It is more efficient and secure compared to **Statement** as it precompiles the query, reducing the risk of SQL injection.
+- Example:
+  ```java
+  String query = "SELECT * FROM users WHERE username = ?";
+  PreparedStatement ps = conn.prepareStatement(query);
+  ps.setString(1, "user1");
+  ResultSet rs = ps.executeQuery();
+  ```
+
+---
+
+### 7️⃣ What is **Transaction Management** in JDBC?  
+- **Transaction Management** in JDBC is used to ensure that a set of SQL operations either all succeed or fail (i.e., **Atomicity**).
+- **Steps for transaction management**:
+  1. **Disable Auto-commit**: `conn.setAutoCommit(false);`
+  2. **Execute SQL Queries**: Perform multiple SQL operations.
+  3. **Commit**: `conn.commit();` to save changes if everything is successful.
+  4. **Rollback**: `conn.rollback();` to undo changes if there is an error.
+
+---
+
+### 8️⃣ What are **Batch Processing** and its advantages in JDBC?  
+- **Batch Processing** allows multiple SQL statements to be executed as a batch, reducing database round trips.
+- It is beneficial for inserting or updating large amounts of data efficiently.
+- Example:
+  ```java
+  Statement stmt = conn.createStatement();
+  stmt.addBatch("INSERT INTO users (name) VALUES ('John')");
+  stmt.addBatch("INSERT INTO users (name) VALUES ('Jane')");
+  int[] result = stmt.executeBatch();
+  ```
+
+---
+
+### 9️⃣ What are **CallableStatement** and how do you use it in JDBC?  
+- **CallableStatement** is used to execute stored procedures in the database.
+- It can execute SQL queries that are stored in the database itself as a procedure.
+- Example:
+  ```java
+  String storedProc = "{call getUserInfo(?, ?)}";
+  CallableStatement cs = conn.prepareCall(storedProc);
+  cs.setInt(1, 1001);
+  cs.registerOutParameter(2, java.sql.Types.VARCHAR);
+  cs.execute();
+  String userInfo = cs.getString(2);
+  ```
+
+---
+
+### 🔟 How does **Exception Handling** work in JDBC?  
+- JDBC provides **SQLExceptions** to handle database errors.
+- You can handle exceptions using a `try-catch` block and use `getMessage()`, `getErrorCode()`, and `getSQLState()` methods of `SQLException` to get detailed information about the error.
+
+---
+
+### 1️⃣1️⃣ What is the **ResultSet** in JDBC, and how do you process it?  
+- The **ResultSet** is an object that holds the data retrieved from a SQL query execution.
+- You can process the result set by iterating through it using methods like `next()`, `getString()`, `getInt()`, etc.
+  ```java
+  while (rs.next()) {
+      String name = rs.getString("username");
+      int age = rs.getInt("age");
+  }
+  ```
+
+---
+
+### 1️⃣2️⃣ What is the role of **Auto-commit** in JDBC?  
+- **Auto-commit** is a mode in which each SQL statement is executed as a separate transaction.
+- By default, JDBC operates in auto-commit mode. To manually control transactions, you can disable auto-commit using `conn.setAutoCommit(false)`.
+
+---
+
+### 1️⃣3️⃣ What is **SQL Injection**, and how can it be prevented in JDBC?  
+- **SQL Injection** is a security vulnerability where malicious input is inserted into SQL statements, potentially allowing attackers to execute unauthorized queries.
+- It can be prevented by:
+  - Using **PreparedStatement** with parameterized queries instead of concatenating user input into SQL strings.
+  - Validating user input before processing it.
+
+---
+
+### 1️⃣4️⃣ What is **getGeneratedKeys()** in JDBC?  
+- The `getGeneratedKeys()` method is used to retrieve auto-generated keys (e.g., primary keys) after executing an `INSERT` statement.
+- Example:
+  ```java
+  PreparedStatement ps = conn.prepareStatement("INSERT INTO users (name) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+  ps.setString(1, "John");
+  ps.executeUpdate();
+  ResultSet rs = ps.getGeneratedKeys();
+  if (rs.next()) {
+      int id = rs.getInt(1);  // Get the generated key
+  }
+  ```
+
+---
+
+### 1️⃣5️⃣ What is the **difference between Statement, PreparedStatement, and CallableStatement** in JDBC?  
+- **Statement**: Used for executing static SQL queries, not efficient for repeated queries.
+- **PreparedStatement**: Used for executing parameterized SQL queries, more efficient and secure than `Statement`.
+- **CallableStatement**: Used for executing stored procedures.
+
+---
+
+# 📂 **ORM (Hibernate and JPA)**
+
+---
+
+### 1️⃣ What is **ORM (Object-Relational Mapping)**?  
+- **ORM** is a programming technique used to convert data between incompatible type systems (object-oriented programming and relational databases).  
+- It allows developers to work with databases using object-oriented paradigms, eliminating the need for manual SQL queries and mapping objects to database tables.
+
+---
+
+### 2️⃣ What is the difference between **Hibernate** and **JPA**?  
+- **Hibernate** is a framework that implements the **JPA** (Java Persistence API) specification. 
+  - Hibernate provides additional features such as caching and session management that are not part of JPA.
+  - It is a full-fledged ORM framework.
+- **JPA** is a Java specification for ORM frameworks. It provides a set of interfaces and annotations, but it does not define a concrete implementation.
+  - Hibernate, EclipseLink, and OpenJPA are popular implementations of JPA.
+
+---
+
+### 3️⃣ What are the main **annotations** used in **JPA**?  
+- `@Entity`: Defines a class as a persistent entity.
+- `@Id`: Marks the primary key field of an entity.
+- `@GeneratedValue`: Specifies how the primary key should be generated (e.g., auto, sequence).
+- `@Column`: Maps a field to a database column.
+- `@OneToOne`, `@OneToMany`, `@ManyToOne`, `@ManyToMany`: Defines relationships between entities.
+- `@JoinColumn`: Specifies the column used to join two tables in a relationship.
+
+---
+
+### 4️⃣ What is **HQL (Hibernate Query Language)**, and how does it differ from SQL?  
+- **HQL** is an object-oriented query language used in Hibernate to query the database. Unlike SQL, HQL queries are written in terms of Java objects and their properties, not the database tables.
+- Example of HQL:
+  ```java
+  String hql = "FROM User WHERE username = :username";
+  Query query = session.createQuery(hql);
+  query.setParameter("username", "john_doe");
+  List<User> users = query.list();
+  ```
+- **Difference from SQL**: 
+  - HQL queries are based on entities and their properties, not database tables and columns.
+  - HQL supports polymorphic queries, allowing you to query by entity class.
+
+---
+
+### 5️⃣ What is **lazy loading** in Hibernate, and how does it work?  
+- **Lazy Loading** is a strategy used in Hibernate to load related entities only when they are accessed for the first time (on demand), rather than loading them immediately.
+- It is useful for improving performance when you have large object graphs.
+- Example:
+  ```java
+  @OneToMany(fetch = FetchType.LAZY)
+  private List<Order> orders;
+  ```
+
+---
+
+### 6️⃣ What is **Eager Loading** in Hibernate?  
+- **Eager Loading** means that related entities are loaded immediately when the parent entity is loaded.
+- It is useful when you know that you will need the related entities.
+- Example:
+  ```java
+  @OneToMany(fetch = FetchType.EAGER)
+  private List<Order> orders;
+  ```
+
+---
+
+### 7️⃣ What is the **Session** in Hibernate?  
+- The **Session** is an interface in Hibernate that is used to interact with the database. It provides methods for saving, updating, deleting, and retrieving objects.
+- A **Session** is a single-threaded object, meaning it should not be shared between different threads.
+- It is used to perform CRUD operations and is analogous to a connection in JDBC.
+
+---
+
+### 8️⃣ What is **First-Level Cache** in Hibernate?  
+- **First-Level Cache** (also known as **Session Cache**) is a cache that is associated with the **Session** object.
+- It stores the entities that are loaded or saved during the lifecycle of the session.
+- The session cache is **enabled by default** and is cleared once the session is closed.
+
+---
+
+### 9️⃣ What is **Second-Level Cache** in Hibernate?  
+- **Second-Level Cache** is a cache that is shared across sessions and is used to store data that is accessed frequently.
+- It is optional and requires configuration. It can significantly improve performance by reducing database calls.
+- Popular second-level cache providers include **EHCache**, **Infinispan**, and **Redis**.
+
+---
+
+### 🔟 What is **Cascading** in Hibernate, and how is it used?  
+- **Cascading** refers to automatically applying certain operations (e.g., persist, merge, delete) to related entities when performing these operations on the parent entity.
+- Common cascade options:
+  - `CascadeType.PERSIST`: Propagates the persist operation.
+  - `CascadeType.MERGE`: Propagates the merge operation.
+  - `CascadeType.ALL`: Applies all operations (persist, merge, remove).
+  - Example:
+    ```java
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Order> orders;
+    ```
+
+---
+
+### 1️⃣1️⃣ What is **@OneToMany** and **@ManyToOne** in JPA?  
+- **@OneToMany**: Defines a one-to-many relationship, where one entity can be associated with multiple entities.
+  - Example:
+    ```java
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+    ```
+- **@ManyToOne**: Defines a many-to-one relationship, where multiple entities can be associated with one entity.
+  - Example:
+    ```java
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    ```
+
+---
+
+### 1️⃣2️⃣ What is the role of **Transaction** in Hibernate and JPA?  
+- **Transaction** is used to ensure that a group of operations is executed in a consistent, atomic way.
+- In Hibernate and JPA, it is used to manage the persistence context, committing or rolling back changes to the database.
+  ```java
+  Session session = sessionFactory.openSession();
+  Transaction transaction = session.beginTransaction();
+  session.save(user);
+  transaction.commit();
+  ```
+
+---
+
+### 1️⃣3️⃣ What is the purpose of **@Transient** annotation in JPA?  
+- The **@Transient** annotation is used to mark a field in an entity that should not be persisted to the database.
+- It is useful for marking fields that are used for business logic or calculations but do not require storage in the database.
+
+---
+
+### 1️⃣4️⃣ How do you configure **Hibernate** in a Spring Boot application?  
+- **Configuration** in Spring Boot is done via `application.properties` or `application.yml`.
+  Example:
+  ```properties
+  spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+  spring.datasource.username=root
+  spring.datasource.password=root
+  spring.jpa.hibernate.ddl-auto=update
+  spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+  ```
+
+---
+
+### 1️⃣5️⃣ What is **@Query** annotation in Spring Data JPA?  
+- The **@Query** annotation is used to define custom queries in Spring Data JPA repositories.
+- It can be used for both JPQL and native SQL queries.
+  Example:
+  ```java
+  @Query("SELECT u FROM User u WHERE u.username = :username")
+  User findByUsername(@Param("username") String username);
+  ```
+
+---
+
+# 📂 **Microservices**
+
+---
+
+### 1️⃣ What are **Microservices**?  
+- **Microservices** is an architectural style where a system is designed as a collection of small, loosely coupled services, each responsible for a specific business function.
+- Each microservice can be developed, deployed, and scaled independently. They communicate with each other via lightweight protocols (usually HTTP/REST or messaging queues).
+
+---
+
+### 2️⃣ What are the **advantages** of using **Microservices**?  
+- **Scalability**: Individual services can be scaled independently based on demand.
+- **Flexibility**: You can use different technologies for different services (polyglot persistence).
+- **Fault isolation**: A failure in one service does not affect the others.
+- **Continuous Deployment**: Microservices support agile development and can be deployed independently.
+- **Improved maintainability**: Smaller services are easier to understand, develop, and maintain.
+
+---
+
+### 3️⃣ What are the **disadvantages** of using **Microservices**?  
+- **Complexity**: Microservices introduce complexity due to distributed systems, communication between services, and service discovery.
+- **Data Management**: Each service may have its own database, making data consistency harder to achieve.
+- **Latency**: Network calls between services can introduce latency.
+- **Deployment Overhead**: Managing multiple services can lead to higher operational overhead.
+
+---
+
+### 4️⃣ What are **RESTful APIs** in Microservices?  
+- **RESTful APIs** are HTTP-based APIs that follow the principles of Representational State Transfer (REST). These APIs are commonly used in microservices for communication between services.
+- RESTful APIs:
+  - Use HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
+  - Are stateless (no session information is stored between requests).
+  - Operate with resource URIs to represent entities.
+
+---
+
+### 5️⃣ What is **Service Discovery** in Microservices?  
+- **Service Discovery** is the mechanism by which services in a microservices architecture locate and communicate with each other.
+- Popular tools for service discovery:
+  - **Eureka** (Netflix OSS)
+  - **Consul**
+  - **Zookeeper**
+- The service registry keeps track of available services and their instances, while clients query the registry to discover services dynamically.
+
+---
+
+### 6️⃣ What is **API Gateway** in Microservices?  
+- An **API Gateway** is a server that acts as an entry point for client requests to a microservices system.
+- It routes requests to the appropriate microservices, handles load balancing, and performs tasks such as authentication, logging, and rate limiting.
+- Example: **Spring Cloud Gateway**, **Zuul**.
+
+---
+
+### 7️⃣ What is the role of **Spring Cloud** in Microservices?  
+- **Spring Cloud** provides tools for building and managing microservices, including service discovery, configuration management, messaging, and more.
+- Common features:
+  - **Spring Cloud Netflix**: Provides tools like Eureka (service discovery), Ribbon (client-side load balancing), and Hystrix (fault tolerance).
+  - **Spring Cloud Config**: Centralized configuration management.
+  - **Spring Cloud Stream**: Messaging and event-driven architectures.
+  - **Spring Cloud Gateway**: API Gateway functionality.
+
+---
+
+### 8️⃣ What is **Spring Boot**'s role in Microservices?  
+- **Spring Boot** simplifies the process of setting up and configuring microservices. It provides:
+  - Embedded web servers (Tomcat, Jetty, etc.).
+  - Auto-configuration to minimize boilerplate code.
+  - Embedded support for microservices-related features (e.g., Spring Cloud integration).
+  - Easy integration with databases, messaging systems, and other services.
+
+---
+
+### 9️⃣ What is **Circuit Breaker** in Microservices?  
+- A **Circuit Breaker** is a design pattern used to prevent cascading failures when a service fails or becomes unavailable.
+- It monitors the communication between microservices and triggers fallback mechanisms when a service is down or has issues.
+- Common tools for circuit breaking:
+  - **Hystrix** (from Netflix)
+  - **Resilience4j**
+  - **Spring Cloud Circuit Breaker**
+
+---
+
+### 🔟 What is **Event-Driven Architecture** in Microservices?  
+- **Event-Driven Architecture (EDA)** involves services communicating asynchronously by producing and consuming events (messages).
+- This pattern is commonly used in microservices to decouple services, ensuring that a service does not directly call another service but rather reacts to events/messages.
+- Popular tools for event-driven architectures:
+  - **Kafka**
+  - **RabbitMQ**
+  - **ActiveMQ**
+
+---
+
+### 1️⃣1️⃣ What is **Database per Service** in Microservices?  
+- **Database per Service** is a pattern where each microservice manages its own database schema. This ensures that each service is loosely coupled and independently deployable.
+- Benefits:
+  - Service autonomy in terms of data management.
+  - No shared database, which reduces potential bottlenecks.
+  - Different databases (e.g., SQL, NoSQL) can be used for different services.
+- Challenges:
+  - Ensuring consistency and transactions across services.
+  - Complex data management and integration.
+
+---
+
+### 1️⃣2️⃣ What is **SAGA Pattern** in Microservices?  
+- The **SAGA** pattern is used to manage distributed transactions in a microservices architecture.
+- It breaks a distributed transaction into a series of smaller, isolated transactions that can be completed independently.
+- There are two approaches:
+  - **Choreography-based**: Each service knows what to do next.
+  - **Orchestration-based**: A central service manages the sequence of operations.
+
+---
+
+### 1️⃣3️⃣ How does **Centralized Logging** work in Microservices?  
+- **Centralized Logging** aggregates logs from all microservices into a central system.
+- Tools:
+  - **ELK Stack** (Elasticsearch, Logstash, Kibana)
+  - **Fluentd**
+  - **Splunk**
+- Centralized logging is crucial for debugging and monitoring microservices, as it allows you to view logs from all services in one place.
+
+---
+
+### 1️⃣4️⃣ What is **Monitoring and Health Checks** in Microservices?  
+- **Monitoring** ensures that each microservice is functioning properly by tracking metrics such as latency, request rates, and error rates.
+- **Health Checks** provide a way to check whether a microservice is healthy and able to handle traffic.
+- Common tools:
+  - **Prometheus** and **Grafana** for metrics and visualization.
+  - **Spring Boot Actuator** for built-in health checks.
+  - **Micrometer** for metrics collection.
+
+---
+
+### 1️⃣5️⃣ What is **Fault Tolerance** in Microservices?  
+- **Fault Tolerance** is the ability of a system to continue functioning even when some components fail.
+- Techniques to improve fault tolerance in microservices:
+  - **Retries**: Automatically retry failed requests.
+  - **Circuit Breaker**: Prevent cascading failures by stopping calls to failing services.
+  - **Timeouts**: Set timeouts for service calls to prevent blocking.
+  - **Bulkheads**: Isolate services to prevent failures from spreading.
+
+---
+
+# 📂 **Oracle NoSQL & MongoDB**
+
+---
+
+### 1️⃣ What is **NoSQL**?  
+- **NoSQL** stands for "Not Only SQL," and it refers to a broad class of database management systems designed to handle unstructured or semi-structured data.
+- NoSQL databases are more flexible and scalable than traditional relational databases (RDBMS), making them ideal for handling big data and real-time web applications.
+- Types of NoSQL databases:
+  - **Document-based** (e.g., MongoDB, CouchDB)
+  - **Key-Value stores** (e.g., Redis, DynamoDB)
+  - **Column-family stores** (e.g., Cassandra, HBase)
+  - **Graph databases** (e.g., Neo4j, Amazon Neptune)
+
+---
+
+### 2️⃣ What is **MongoDB**?  
+- **MongoDB** is a document-based NoSQL database. It stores data in flexible, JSON-like documents (BSON format) rather than in rows and columns.
+- MongoDB is designed for scalability and high availability, offering horizontal scaling (sharding) and built-in replication.
+
+---
+
+### 3️⃣ What are the advantages of using **MongoDB**?  
+- **Scalability**: MongoDB supports horizontal scaling (sharding), which allows you to distribute data across multiple servers.
+- **Flexible schema**: MongoDB uses a schema-less design, so each document can have different fields.
+- **High Availability**: MongoDB provides built-in replication to ensure data availability and fault tolerance.
+- **Rich Query Language**: MongoDB supports a powerful query language, including indexing, aggregation, and full-text search.
+
+---
+
+### 4️⃣ What is **BSON** in MongoDB?  
+- **BSON (Binary JSON)** is the format in which MongoDB stores data. It is a binary representation of JSON-like documents.
+- BSON extends the capabilities of JSON by adding support for additional data types like `ObjectId`, `Date`, and `Binary`.
+
+---
+
+### 5️⃣ What are the basic CRUD operations in **MongoDB**?  
+- **Create**: Insert a document into a collection.
+  ```javascript
+  db.users.insertOne({ name: "John", age: 30 });
+  ```
+- **Read**: Retrieve documents from a collection.
+  ```javascript
+  db.users.find({ name: "John" });
+  ```
+- **Update**: Modify existing documents.
+  ```javascript
+  db.users.updateOne({ name: "John" }, { $set: { age: 31 } });
+  ```
+- **Delete**: Remove documents from a collection.
+  ```javascript
+  db.users.deleteOne({ name: "John" });
+  ```
+
+---
+
+### 6️⃣ What is **Sharding** in MongoDB?  
+- **Sharding** is the process of distributing data across multiple servers to ensure horizontal scalability. Each shard is a subset of the data, and together they form a sharded cluster.
+- MongoDB automatically distributes documents across shards based on a shard key.
+
+---
+
+### 7️⃣ What is **Replication** in MongoDB?  
+- **Replication** ensures that data is copied to multiple MongoDB instances for redundancy and high availability.
+- In a replica set, one node is the primary (handles writes) and others are secondary (replica copies of the primary).
+- If the primary node fails, a secondary node can be promoted to primary.
+
+---
+
+### 8️⃣ What is the difference between **MongoDB** and **Relational Databases**?  
+- **Schema**: MongoDB is schema-less, while relational databases require predefined schemas.
+- **Data Model**: MongoDB uses collections of documents, while relational databases use tables with rows and columns.
+- **Scalability**: MongoDB supports horizontal scaling through sharding, while relational databases are typically scaled vertically (adding more resources to a single server).
+
+---
+
+### 9️⃣ What is **Oracle NoSQL Database**?  
+- **Oracle NoSQL Database** is a distributed key-value store designed for high availability, scalability, and flexibility.
+- It supports both key-value and document data models and is optimized for large-scale applications.
+- It provides features like automatic sharding, replication, and strong consistency.
+
+---
+
+### 🔟 What are the key differences between **Oracle NoSQL Database** and **MongoDB**?  
+- **Data Model**: 
+  - MongoDB is a document-oriented database, while Oracle NoSQL can support key-value, document, and other models.
+- **Consistency**: 
+  - Oracle NoSQL provides strong consistency by default, while MongoDB provides eventual consistency in a distributed setup.
+- **Sharding and Scalability**: 
+  - Both support sharding, but Oracle NoSQL is often considered more suitable for large-scale, distributed enterprise applications.
+
+---
+
+### 1️⃣1️⃣ How do you define **Indexes** in MongoDB?  
+- **Indexes** are used in MongoDB to improve the performance of query operations. Without indexes, MongoDB must scan every document in the collection.
+- MongoDB supports several types of indexes:
+  - **Single-field indexes**: Indexes on a single field.
+  - **Compound indexes**: Indexes on multiple fields.
+  - **Text indexes**: For full-text search.
+  - **Geospatial indexes**: For location-based queries.
+- Example of creating an index:
+  ```javascript
+  db.users.createIndex({ name: 1 });
+  ```
+
+---
+
+### 1️⃣2️⃣ What are **Aggregation** and **Aggregation Pipeline** in MongoDB?  
+- **Aggregation** in MongoDB is used to process data records and return computed results.
+- The **Aggregation Pipeline** is a framework that processes data in stages (similar to SQL's `GROUP BY` and `HAVING` clauses).
+- Example:
+  ```javascript
+  db.orders.aggregate([
+    { $match: { status: "completed" } },
+    { $group: { _id: "$customer_id", totalAmount: { $sum: "$amount" } } }
+  ]);
+  ```
+
+---
+
+### 1️⃣3️⃣ How does **MongoDB** ensure **Data Consistency**?  
+- MongoDB provides **strong consistency** in a single-node setup, meaning reads always return the most recent write.
+- In a replica set, MongoDB uses **Read Preferences** to allow you to specify whether to read from primary or secondary nodes, impacting consistency and performance.
+- **Write Concern** is a setting that ensures data is written to a specific number of nodes for consistency.
+
+---
+
+### 1️⃣4️⃣ What are **Transactions** in MongoDB, and how do they work?  
+- MongoDB supports **multi-document transactions**, allowing you to perform multiple operations in a single, atomic transaction.
+- This feature provides ACID guarantees (Atomicity, Consistency, Isolation, Durability) for multiple documents or collections.
+- Example:
+  ```javascript
+  const session = db.getMongo().startSession();
+  session.startTransaction();
+  db.collection1.insertOne({ name: "John" }, { session });
+  db.collection2.updateOne({ name: "John" }, { $set: { age: 30 } }, { session });
+  session.commitTransaction();
+  ```
+
+---
