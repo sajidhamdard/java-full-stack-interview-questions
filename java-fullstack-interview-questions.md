@@ -1351,10 +1351,6 @@ List<String> immutableList = List.copyOf(list);
 4. **Pattern Matching for instanceof** (Java 16)
 5. **Sealed Classes** (Java 17)
 
-
-Perfect — let's move to **Section 4: Microservices**  
-Here’s a **focused list of most-asked Microservices interview questions with short crisp answers** for senior roles.  
-
 ---
 
 # 📂 **Microservices**
