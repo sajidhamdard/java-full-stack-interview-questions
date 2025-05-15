@@ -1204,6 +1204,34 @@ Here are some Java interview questions focused on **JVM memory management**:
 19. How does JVM handle **thread-local variables** with respect to memory leaks?
 20. What is the impact of large object allocation on JVM memory and GC performance?
 
+## Stream API 
+
+Got it! Here are **20 Java 8 Streams interview questions** focused solely on streams, lambdas, and related functional programming concepts:
+
+---
+
+### 20 Java 8 Streams Interview Questions
+
+1. How do you find the frequency of each character in a string using Java 8 streams?
+2. How do you remove duplicate elements from a list using Java 8 streams?
+3. How do you find the second largest number in a list using Java 8 streams?
+4. How do you sort a list of strings in reverse alphabetical order using streams?
+5. How do you count the number of words in a string using Java 8 streams?
+6. How do you group a list of objects by a specific property using streams?
+7. How do you filter all even numbers from a list and collect them into a set using streams?
+8. How do you find the first non-repeated character in a string using Java8 streams?
+9. How do you join a list of strings into a single comma-separated string using streams?
+10. How do you find the maximum and minimum values in a list using streams?
+11. How do you convert a list of strings to uppercase using Java 8 streams?
+12. How do you flatten a list of lists into a single list using streams?
+13. How do you check if any element in a list matches a given condition using streams?
+14. How do you check if all elements in a list satisfy a condition using streams?
+15. How do you find the sum of all numbers in a list using streams?
+16. How do you skip the first N elements and limit the stream to the next M elements?
+17. How do you partition a list into two groups based on a predicate using streams?
+18. How do you find the average of a list of integers using streams?
+19. How do you remove null values from a list using streams?
+20. How do you use streams to find duplicate elements in a list?
 
 ## Modern Java Interview Questions
 
