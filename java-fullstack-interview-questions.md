@@ -1159,6 +1159,52 @@
 359. When and why would you use profiles in Spring Boot?
 360. What is Thymeleaf, and how is it used in Spring Boot?
 
+## Class loader
+
+Here are some Java interview questions focused on **classloaders**:
+
+1. What is a classloader in Java?
+2. What are the different types of classloaders in Java?
+3. In what order do classloaders delegate class loading?
+4. How does the **parent delegation model** work in Java classloading?
+5. Can you override the parent delegation model? If so, how and why would you do it?
+6. What is the difference between **Bootstrap**, **Extension**, and **Application** classloaders?
+7. How can you create a custom classloader in Java?
+8. When would you use a custom classloader?
+9. What is the role of `findClass()` and `loadClass()` methods in classloaders?
+10. How can classloader issues cause `ClassNotFoundException` or `NoClassDefFoundError`?
+11. How do classloaders affect class reloading in Java?
+12. How are classloaders used in application servers like Tomcat or WebSphere?
+13. What is a **context classloader** and where is it used?
+14. What are **classloader leaks** and how can they be prevented?
+15. How does classloader work in modular environments like OSGi or Java 9 modules?
+
+## JVM Memory Management
+
+Here are some Java interview questions focused on **JVM memory management**:
+
+1. What are the main memory areas allocated by the JVM?
+2. What is the difference between heap and stack memory?
+3. What is the purpose of the **method area** in the JVM?
+4. What is the **young generation**, **old generation**, and **permanent generation (PermGen)**?
+5. What replaced **PermGen** in Java 8 and why?
+6. What are **eden space**, **survivor spaces (S0 and S1)** in the young generation?
+7. How does garbage collection work in Java?
+8. What are the different types of garbage collectors in Java?
+9. How do **minor GC** and **major GC** differ?
+10. What is a **full GC**, and when does it occur?
+11. What are **stop-the-world** events in JVM garbage collection?
+12. How can you monitor and tune JVM memory usage?
+13. What tools can you use to analyze memory usage and GC behavior in Java?
+14. What causes **OutOfMemoryError**, and how can it be prevented?
+15. What JVM options are available to configure heap size and garbage collection behavior?
+16. What is **memory fragmentation** in JVM and how is it handled?
+17. Can an object be garbage collected while it’s still reachable? Why or why not?
+18. What are **soft**, **weak**, and **phantom references**, and how do they affect GC?
+19. How does JVM handle **thread-local variables** with respect to memory leaks?
+20. What is the impact of large object allocation on JVM memory and GC performance?
+
+
 ## Modern Java Interview Questions
 
 # Java Full Stack Senior Engineer — Interview Questions and Answers
