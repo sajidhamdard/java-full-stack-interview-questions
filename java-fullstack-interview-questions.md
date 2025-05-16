@@ -604,9 +604,6 @@
 
 * Include: Enforces consistent floating-point calculations across platforms.
 
-
-Sure! Here's your list converted to the requested format with the same question numbers:
-
 ---
 
 ### 🔹 **101. How are polymorphism and abstraction related in object-oriented programming?**
