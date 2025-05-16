@@ -1849,81 +1849,149 @@ class Employee implements Comparable<Employee> {
 
 ## MULTI-THREADING
 
-Got it! Here’s the list of questions with related **include** topics for each, grouped for clarity:
+---
+
+### 🔹 **304. Explain the concepts of the Thread class, Runnable interface, and Callable interface in Java.**
+
+* Include: Multithreading basics, Java Concurrency, Thread creation mechanisms.
 
 ---
 
-**304. Explain the concepts of the Thread class, Runnable interface, and Callable interface in Java.**
-*Include: Multithreading basics, Java Concurrency, Thread creation mechanisms*
+### 🔹 **305. What are the main differences between the Runnable and Callable interfaces in Java?**
 
-**305. What are the main differences between the Runnable and Callable interfaces in Java?**
-*Include: Runnable vs Callable, Future, Concurrency APIs*
+* Include: Runnable vs Callable, Future, Concurrency APIs.
 
-**306. Describe different ways of creating threads in Java.**
-*Include: Extending Thread class, Implementing Runnable, Using Callable and FutureTask, ExecutorService*
+---
 
-**307. Discuss the differences between multithreading methods like wait, notify, and notifyAll in Java.**
-*Include: Inter-thread communication, Object class methods, Synchronization*
+### 🔹 **306. Describe different ways of creating threads in Java.**
 
-**308. Explain the concepts of Executor, ExecutorService, ThreadPoolExecutor, ThreadPoolTaskExecutor, Future, and FutureTask in Java.**
-*Include: Executor framework, Thread pooling, Task submission, Asynchronous computation*
+* Include: Extending Thread class, Implementing Runnable, Using Callable and FutureTask, ExecutorService.
 
-**309. Describe the Producer and Consumer problem in the context of multithreading.**
-*Include: Synchronization, wait/notify mechanism, BlockingQueue*
+---
 
-**310. Explain the concepts of CountdownLatch and CyclicBarrier in Java.**
-*Include: java.util.concurrent utilities, thread coordination, synchronization aids*
+### 🔹 **307. Discuss the differences between multithreading methods like wait, notify, and notifyAll in Java.**
 
-**311. What are the key differences between the ReentrantLock and synchronized keyword in Java?**
-*Include: Lock interface, intrinsic locks, fairness, reentrancy*
+* Include: Inter-thread communication, Object class methods, Synchronization.
 
-**312. Why must wait() and notify() methods be called from a synchronized block, and why are these methods part of the Object class in Java?**
-*Include: Object monitor, thread communication, intrinsic locking*
+---
 
-**313. Compare Collection.synchronized() and concurrent collections in Java.**
-*Include: Thread-safe collections, synchronization wrappers, java.util.concurrent collections*
+### 🔹 **308. Explain the concepts of Executor, ExecutorService, ThreadPoolExecutor, ThreadPoolTaskExecutor, Future, and FutureTask in Java.**
 
-**314. Discuss the differences between synchronized blocks and synchronized methods in Java.**
-*Include: Synchronization scope, locking granularity, performance*
+* Include: Executor framework, Thread pooling, Task submission, Asynchronous computation.
 
-**315. Explain the use of a log object within a synchronized block in Java.**
-*Include: Thread safety, logging in multithreaded environments*
+---
 
-**316. What is static synchronized in Java, and how is it used?**
-*Include: Class-level locks, static methods synchronization*
+### 🔹 **309. Describe the Producer and Consumer problem in the context of multithreading.**
 
-**317. Describe how to implement synchronization without using the synchronized keyword or any other consistent or synchronized data structure in Java.**
-*Include: Lock interfaces, atomic variables, volatile keyword*
+* Include: Synchronization, wait/notify mechanism, BlockingQueue.
 
-**318. In which version of Java was the ExecutorService included?**
-*Include: Java concurrency history, Java 5 features*
+---
 
-**319. How can you share a copy of a single object among multiple threads without making that object static and final in Java?**
-*Include: Thread safety, immutability, synchronization*
+### 🔹 **310. Explain the concepts of CountdownLatch and CyclicBarrier in Java.**
 
-**320. Explain the concurrent package in the context of multithreading in Java.**
-*Include: java.util.concurrent, thread pools, synchronization utilities*
+* Include: java.util.concurrent utilities, thread coordination, synchronization aids.
 
-**321. Discuss the differences between the sleep() and wait() methods in Java.**
-*Include: Thread control, synchronization, Object vs Thread methods*
+---
 
-**322. Explain the concepts of volatile and thread-local variables in Java.**
-*Include: Memory visibility, thread confinement, concurrency*
+### 🔹 **311. What are the key differences between the ReentrantLock and synchronized keyword in Java?**
 
-**323. What are the differences between a thread and a process in Java?**
-*Include: OS-level vs JVM threads, concurrency vs parallelism*
+* Include: Lock interface, intrinsic locks, fairness, reentrancy.
 
-**324. Describe the lifecycle of a thread in Java.**
-*Include: Thread states, transitions, thread scheduling*
+---
 
-**325. Differentiate between the yield() and join() methods in Java.**
-*Include: Thread scheduling, thread coordination*
+### 🔹 **312. Why must wait() and notify() methods be called from a synchronized block, and why are these methods part of the Object class in Java?**
 
-**326. How can you create a thread in Java without using the Runnable interface and Thread class?**
-*Include: Lambda expressions, Executors, ForkJoin framework*
+* Include: Object monitor, thread communication, intrinsic locking.
 
-**327. What happens to a thread once it has completed its execution, and will it be garbage collected in Java?**
-*Include: Thread termination, thread object lifecycle, GC in Java*
+---
+
+### 🔹 **313. Compare Collection.synchronized() and concurrent collections in Java.**
+
+* Include: Thread-safe collections, synchronization wrappers, java.util.concurrent collections.
+
+---
+
+### 🔹 **314. Discuss the differences between synchronized blocks and synchronized methods in Java.**
+
+* Include: Synchronization scope, locking granularity, performance.
+
+---
+
+### 🔹 **315. Explain the use of a log object within a synchronized block in Java.**
+
+* Include: Thread safety, logging in multithreaded environments.
+
+---
+
+### 🔹 **316. What is static synchronized in Java, and how is it used?**
+
+* Include: Class-level locks, static methods synchronization.
+
+---
+
+### 🔹 **317. Describe how to implement synchronization without using the synchronized keyword or any other consistent or synchronized data structure in Java.**
+
+* Include: Lock interfaces, atomic variables, volatile keyword.
+
+---
+
+### 🔹 **318. In which version of Java was the ExecutorService included?**
+
+* Include: Java concurrency history, Java 5 features.
+
+---
+
+### 🔹 **319. How can you share a copy of a single object among multiple threads without making that object static and final in Java?**
+
+* Include: Thread safety, immutability, synchronization.
+
+---
+
+### 🔹 **320. Explain the concurrent package in the context of multithreading in Java.**
+
+* Include: java.util.concurrent, thread pools, synchronization utilities.
+
+---
+
+### 🔹 **321. Discuss the differences between the sleep() and wait() methods in Java.**
+
+* Include: Thread control, synchronization, Object vs Thread methods.
+
+---
+
+### 🔹 **322. Explain the concepts of volatile and thread-local variables in Java.**
+
+* Include: Memory visibility, thread confinement, concurrency.
+
+---
+
+### 🔹 **323. What are the differences between a thread and a process in Java?**
+
+* Include: OS-level vs JVM threads, concurrency vs parallelism.
+
+---
+
+### 🔹 **324. Describe the lifecycle of a thread in Java.**
+
+* Include: Thread states, transitions, thread scheduling.
+
+---
+
+### 🔹 **325. Differentiate between the yield() and join() methods in Java.**
+
+* Include: Thread scheduling, thread coordination.
+
+---
+
+### 🔹 **326. How can you create a thread in Java without using the Runnable interface and Thread class?**
+
+* Include: Lambda expressions, Executors, ForkJoin framework.
+
+---
+
+### 🔹 **327. What happens to a thread once it has completed its execution, and will it be garbage collected in Java?**
+
+* Include: Thread termination, thread object lifecycle, GC in Java.
 
 ---
 
