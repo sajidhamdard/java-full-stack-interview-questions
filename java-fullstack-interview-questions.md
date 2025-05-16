@@ -1228,10 +1228,6 @@ class Employee implements Comparable<Employee> {
 
 ---
 
-Got it! Here's the converted list from 201 to 230 with **"Include"** sections listing related topics (not the answers), matching your requested style:
-
----
-
 ### 🔹 **201. Why has ArrayList extended the java.util.AbstractList class in Java?**
 
 * Include: Java Collections Framework hierarchy, AbstractList class, List interface, skeletal implementation patterns.
