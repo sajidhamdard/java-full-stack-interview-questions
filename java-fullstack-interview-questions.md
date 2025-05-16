@@ -2294,8 +2294,6 @@ class Employee implements Comparable<Employee> {
 
 ## JVM Memory Management
 
-Certainly! Here are the JVM memory and GC questions starting from 376 in the requested format:
-
 ---
 
 ### 🔹 **376. What are the main memory areas allocated by the JVM?**
