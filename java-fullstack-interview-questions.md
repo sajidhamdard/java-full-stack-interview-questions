@@ -837,8 +837,6 @@
 
 ## Collection
 
-Got it! Here’s your requested list, restructured in the same concise style you showed for 137 and 138:
-
 ---
 
 ### 🔹 **139. What is the default size of collection classes like ArrayList and Vector in Java?**
