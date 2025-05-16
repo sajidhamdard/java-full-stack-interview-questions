@@ -206,8 +206,6 @@
 
 * Include: Motivation, compatibility, override rules, diamond problem.
 
-Thanks for the reminder! Here's the **continued list in your preferred format (51–100):**
-
 ---
 
 ### 🔹 **51. What is an inner class in Java?**
