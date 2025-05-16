@@ -10,197 +10,295 @@
 
 * Include: Usage in methods and constructors (`super()`, `this()`), referencing parent vs current object.
 
+---
+
 ### 🔹 **2. Can a constructor be private in Java?**
 
 * Include: Use cases like Singleton pattern, static factory methods, and preventing instantiation.
+
+---
 
 ### 🔹 **3. Explain static vs instance variables and methods.**
 
 * Include: Class-level vs object-level behavior, memory management, access without object creation.
 
+---
+
 ### 🔹 **4. What is method overloading and overriding? How do they differ?**
 
 * Include: Rules, examples, return type constraints, overloading in child class, covariant return types, compile-time vs runtime binding.
+
+---
 
 ### 🔹 **5. How does polymorphism work in Java?**
 
 * Include: Static vs dynamic binding, upcasting/downcasting, how method resolution happens, interface vs class polymorphism.
 
+---
+
 ### 🔹 **6. What are covariant return types in Java?**
 
 * Include: Overriding with return type as subtype, differences with overloading.
+
+---
 
 ### 🔹 **7. Explain compile-time vs runtime binding.**
 
 * Include: When each occurs, examples using overloading/overriding, polymorphism impact.
 
+---
+
 ### 🔹 **8. What are constructors in Java and how are they different from methods?**
 
 * Include: Overloading constructors, constructor chaining, calling `super()` and `this()`.
+
+---
 
 ### 🔹 **9. Can abstract classes have constructors? What’s their role?**
 
 * Include: How they help in inheritance, instantiation flow of abstract classes.
 
+---
+
 ### 🔹 **10. Explain memory management in Java.**
 
 * Include: Stack vs heap, role of JVM, object allocation, memory leaks.
+
+---
 
 ### 🔹 **11. What is garbage collection in Java and how does it work?**
 
 * Include: GC algorithms (mark-sweep, G1), GC triggers, explicit GC call (`System.gc()`), unreachable objects.
 
+---
+
 ### 🔹 **12. Can you force garbage collection in Java?**
 
 * Include: Why it’s discouraged, GC hints and behavior.
+
+---
 
 ### 🔹 **13. Can the `main()` method be overloaded or overridden? Can it be final?**
 
 * Include: Behavior of overloaded `main()`, inheritance limitations, static constraints.
 
+---
+
 ### 🔹 **14. What is the `final` keyword in Java and where can it be used?**
 
 * Include: Final variables, methods, classes; immutability, final with reflection.
+
+---
 
 ### 🔹 **15. Can a final variable be reassigned or modified?**
 
 * Include: Final vs effectively final, object mutability even when reference is final.
 
+---
+
 ### 🔹 **16. Why use a final class if it can’t be extended?**
 
 * Include: Design intent, immutability, security, preventing inheritance misuse.
+
+---
 
 ### 🔹 **17. Explain reflection in Java. What are its common uses and concerns?**
 
 * Include: Accessing private fields/methods, modifying final fields, performance, security issues.
 
+---
+
 ### 🔹 **18. Can reflection break encapsulation in Java?**
 
 * Include: Accessing private members, setting values, bypassing access modifiers.
+
+---
 
 ### 🔹 **19. What are access modifiers in Java?**
 
 * Include: `public`, `private`, `protected`, default; visibility rules across packages and subclasses.
 
+---
+
 ### 🔹 **20. What is encapsulation and how is it achieved in Java?**
 
 * Include: Benefits, real-world examples, relation to access modifiers.
+
+---
 
 ### 🔹 **21. What is the difference between abstraction and encapsulation?**
 
 * Include: Conceptual vs implementation difference, real-world analogy.
 
+---
+
 ### 🔹 **22. What are abstract classes and interfaces in Java?**
 
 * Include: Differences, use cases, Java 8+ interface enhancements (`default`, `static` methods).
+
+---
 
 ### 🔹 **23. Can an interface extend another interface? Can it implement a class?**
 
 * Include: Multiple inheritance in interfaces, limitations.
 
+---
+
 ### 🔹 **24. What is multiple inheritance and how is it achieved in Java?**
 
 * Include: Interface-based inheritance, diamond problem resolution.
+
+---
 
 ### 🔹 **25. Can a class implement multiple interfaces and extend another class?**
 
 * Include: Syntax, order (`extends` before `implements`), best practices.
 
+---
+
 ### 🔹 **26. Can you declare a class `static` in Java?**
 
 * Include: Nested static classes only, use cases for static inner classes.
+
+---
 
 ### 🔹 **27. What is the difference between `==` and `.equals()` in Java?**
 
 * Include: Reference vs logical comparison, overriding `equals()`, comparison pitfalls.
 
+---
+
 ### 🔹 **28. Why should you override `hashCode()` when you override `equals()`?**
 
 * Include: Contract between `equals()` and `hashCode()`, behavior in collections.
+
+---
 
 ### 🔹 **29. Can you override a static method in Java?**
 
 * Include: Method hiding, behavior in subclassing, compile-time vs runtime.
 
+---
+
 ### 🔹 **30. Can a static method be abstract?**
 
 * Include: Reasoning behind it being disallowed, contradiction in behavior.
+
+---
 
 ### 🔹 **31. What is the difference between `String`, `StringBuilder`, and `StringBuffer`?**
 
 * Include: Mutability, thread safety, performance comparison.
 
+---
+
 ### 🔹 **32. What is the difference between an object and a class in Java?**
 
 * Include: Real-world analogy, memory representation, usage.
+
+---
 
 ### 🔹 **33. What is inheritance in Java?**
 
 * Include: Types (`single`, `multilevel`), `super`, constructor call sequence.
 
+---
+
 ### 🔹 **34. Explain `instanceof` keyword in Java.**
 
 * Include: Usage, type checking, best practices.
+
+---
 
 ### 🔹 **35. What are static blocks in Java?**
 
 * Include: Initialization, execution order, static variables loading.
 
+---
+
 ### 🔹 **36. Explain initialization blocks in Java.**
 
 * Include: Static vs instance blocks, when they're executed.
+
+---
 
 ### 🔹 **37. What is a Singleton class? How do you implement it?**
 
 * Include: Eager vs lazy loading, thread safety, enum singleton.
 
+---
+
 ### 🔹 **38. What is the purpose of `transient` keyword in Java?**
 
 * Include: Serialization, skipping sensitive data during object serialization.
+
+---
 
 ### 🔹 **39. What is the `volatile` keyword in Java?**
 
 * Include: Thread visibility, memory consistency, difference from `synchronized`.
 
+---
+
 ### 🔹 **40. Explain `synchronized` keyword and its use in Java.**
 
 * Include: Method/block synchronization, object/class-level lock, reentrancy.
+
+---
 
 ### 🔹 **41. What are wrapper classes in Java?**
 
 * Include: Autoboxing/unboxing, primitive to object conversions, usage in collections.
 
+---
+
 ### 🔹 **42. What is the difference between heap and stack memory in Java?**
 
 * Include: Variable/object storage, scope, garbage collection, performance impact.
+
+---
 
 ### 🔹 **43. What are inner classes in Java?**
 
 * Include: Types (non-static, static, local, anonymous), access to outer class members.
 
+---
+
 ### 🔹 **44. What is the use of the `this` keyword in Java?**
 
 * Include: Referring to current object, constructor chaining, avoiding shadowing.
+
+---
 
 ### 🔹 **45. Can Java support default arguments like C++?**
 
 * Include: No native support, use of method overloading to simulate it.
 
+---
+
 ### 🔹 **46. What are static imports in Java?**
 
 * Include: Use cases, syntax, improving code readability, best practices.
+
+---
 
 ### 🔹 **47. What is method hiding in Java?**
 
 * Include: Static method overriding illusion, difference from true overriding.
 
+---
+
 ### 🔹 **48. What is an anonymous class in Java?**
 
 * Include: Use cases, syntax, limitations, comparison with lambdas.
 
+---
+
 ### 🔹 **49. What is the purpose of `instanceof` operator and how does it differ from type casting?**
 
 * Include: Safe type checking, runtime verification, avoiding `ClassCastException`.
+
+---
 
 ### 🔹 **50. What are default methods in interfaces (Java 8 and beyond)?**
 
