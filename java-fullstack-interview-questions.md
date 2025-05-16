@@ -1044,10 +1044,6 @@ class Employee implements Comparable<Employee> {
 
 ---
 
-Sure! Here's the requested format for questions **171 to 200**:
-
----
-
 ### 🔹 **171. What is the difference between Hashtable and ConcurrentMap in Java?**
 
 * Include: Hashtable is synchronized with a single lock for the entire table; ConcurrentMap (like ConcurrentHashMap) uses segment-level locking for better concurrency and performance.
