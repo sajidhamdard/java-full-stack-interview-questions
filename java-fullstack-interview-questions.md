@@ -2439,13 +2439,13 @@ class Employee implements Comparable<Employee> {
 
 ### 🔹 **399. How do you sort a list of strings in reverse alphabetical order using streams?**
 
-* Include: Using `sorted(Comparator.reverseOrder())`.
+* Include: Using `sorted(Comparator.reverseOrder())`. `sorted((a,b) -> b - a)`
 
 ---
 
 ### 🔹 **400. How do you count the number of words in a string using Java 8 streams?**
 
-* Include: Splitting string by space, creating stream and using `count()`.
+* Include: Splitting string by space, creating stream and using `count()`. Or `Arrays.stream(str.split(" ")).count()` Or `Stream.of(str.split(" ")).count()`
 
 ---
 
