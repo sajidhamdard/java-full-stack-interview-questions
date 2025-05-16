@@ -1408,10 +1408,6 @@ class Employee implements Comparable<Employee> {
 
 ---
 
-Sure! Here's your converted list from 231 to 258 with the requested format (question title + related topics in *Include* without answers):
-
----
-
 ### 🔹 **231. Is ArrayList synchronized in Java?**
 
 * Include: Thread safety in collections, synchronized vs unsynchronized collections, Vector, concurrency issues.
