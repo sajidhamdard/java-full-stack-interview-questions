@@ -1,8 +1,8 @@
 # Java Full Stack Interview Questions  
 
-## Core Java
+---
 
-Absolutely! Below is your **refined list of 50 Java interview questions**, with **similar questions merged** and **related subtopics added** for comprehensive coverage. I’ve ensured each consolidated question covers all the key areas originally present in the duplicates.
+## Core Java
 
 ---
 
