@@ -4,7 +4,8 @@
 
 ## Core Java
 
----
+<details>
+<summary>Click for details</summary>
 
 ### 🔹 **1. What is the difference between `super` and `this` in Java?**
 
@@ -834,10 +835,12 @@
 
 ---
 
+</details>
 
 ## Collection
 
----
+<details>
+<summary>Click for details</summary>
 
 ### 🔹 **139. What is the default size of collection classes like ArrayList and Vector in Java?**
 
@@ -1574,8 +1577,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: Dynamic sizing, flexible collections, ease of use, object storage.
 
+</details>
+
 ## CONSTRUCTOR	
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **259. What is the primary use of constructors in Java?**
 
 * Include: Object initialization, default vs custom constructors, role in class instantiation.
@@ -1682,9 +1690,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: Calling constructors within the same class or superclass, benefits of chaining, syntax with `this()` and `super()`.
 
+</details>
 
 ## EXCEPTION HANDLING
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **277. Explain the concepts of try-catch, try with multiple catch blocks, and try with resources in Java.**
 
 * Include: Basic try-catch for exception handling, handling multiple exception types with multiple catch blocks, automatic resource management with try-with-resources.
@@ -1797,9 +1809,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: Exception bubbling up call stack, handling by caller methods, finally blocks execution.
 
+</details>
 
 ## SERVLET & JSP
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **296. Explain the life cycle of a servlet in Java.**
 
 * Include: Servlet loading, instantiation, `init()`, `service()` for handling requests, `destroy()`, and garbage collection phases.
@@ -1846,10 +1862,12 @@ class Employee implements Comparable<Employee> {
 
 * Include: Yes, servlet container uses thread pooling; each request is handled by a new thread but same servlet instance (typically).
 
+</details>
 
 ## MULTI-THREADING
 
----
+<details>
+<summary>Click for details</summary>
 
 ### 🔹 **304. Explain the concepts of the Thread class, Runnable interface, and Callable interface in Java.**
 
@@ -1995,9 +2013,12 @@ class Employee implements Comparable<Employee> {
 
 ---
 
+</details>
+
 ## SPRING BOOT
 
----
+<details>
+<summary>Click for details</summary>
 
 ### 🔹 **328. Explain the concepts of Filters and Interceptors in the context of web applications.**
 
@@ -2197,9 +2218,12 @@ class Employee implements Comparable<Employee> {
 
 ---
 
+</details>
+
 ## Class loader
 
----
+<details>
+<summary>Click for details</summary>
 
 ### 🔹 **361. What is a classloader in Java?**
 
@@ -2289,12 +2313,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: Module-specific classloaders, explicit dependencies, module boundaries, encapsulation, dynamic module loading/unloading.
 
----
+</details>
 
 
 ## JVM Memory Management
 
----
+<details>
+<summary>Click for details</summary>
 
 ### 🔹 **376. What are the main memory areas allocated by the JVM?**
 
@@ -2414,11 +2439,14 @@ class Employee implements Comparable<Employee> {
 
 * Include: Large objects allocated directly in old gen (tenured generation), can cause fragmentation, trigger full GCs.
 
----
+</details>
 
 
 ## Stream API 
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **396. How do you find the frequency of each character in a string using Java 8 streams?**
 
 * Include: Using `chars()` to get IntStream, boxing to Stream<Character>, groupingBy collector with counting.
@@ -2537,9 +2565,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: Using `Collectors.groupingBy()` with counting, filtering where count > 1.
 
----
+</details>
+
 ## OOPS
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **416. What are the four main principles of Object-Oriented Programming (OOP)?**
 
 * Include: Encapsulation, Inheritance, Polymorphism, Abstraction.
@@ -2658,11 +2690,14 @@ class Employee implements Comparable<Employee> {
 
 * Include: Composition implies strong ownership (lifecycle dependency), aggregation is a weaker association (shared lifecycle).
 
----
+/<details>
 
 
 ## Java 8, 9, 10, 11+ Features
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **436. What is a Lambda Expression in Java 8?**
 
 * Include: Concise way to represent anonymous functions, enables functional programming, syntax and use with functional interfaces.
@@ -2811,11 +2846,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: `CompletableFuture`, `Stream.collect()`, `Nashorn JavaScript engine (removed later)`, improvements in concurrency APIs.
 
----
-
+</details>
 
 ## 📂 **Microservices**
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **461. What is Microservices Architecture?**
 
 * Include: Design style where an application is composed of small, loosely coupled services, each responsible for a single business capability.
@@ -2958,10 +2995,13 @@ class Employee implements Comparable<Employee> {
 
 * Include: Retries help recover from transient faults; fallback provides alternative responses or degraded functionality when services are unavailable.
 
----
+</details>
 
 ## 🟠 **Oracle / SQL**
 
+<details>
+<summary>Click for details</summary>
+    
 ### 🔹 **485. What is the difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN in SQL?**
 
 * Include:
@@ -3204,7 +3244,7 @@ class Employee implements Comparable<Employee> {
 
 ### 🔹 **526. Write a SQL query to find employees who earn more than their managers.**
 
----
+</details>
 
 ### 1️⃣ What is AWS?  
 - Amazon Web Services — a **cloud computing platform** providing **IaaS**, **PaaS**, and **SaaS**  
