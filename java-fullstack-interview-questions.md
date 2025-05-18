@@ -2690,7 +2690,7 @@ class Employee implements Comparable<Employee> {
 
 * Include: Composition implies strong ownership (lifecycle dependency), aggregation is a weaker association (shared lifecycle).
 
-/<details>
+</details>
 
 
 ## Java 8, 9, 10, 11+ Features
