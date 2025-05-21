@@ -255,3 +255,131 @@ Without `@Transactional`, if you're:
 | Without `@Transactional`, DB may auto-commit after each statement      |             |
 | Always annotate service-layer methods with `@Transactional` for safety |             |
 | Use separate service classes if needed to avoid internal call issue    |             |
+
+---
+
+## ✅ Why Read Methods Work Without `@Transactional`
+
+### 🧠 By default:
+
+* Most JPA providers (like Hibernate) can **run read queries without needing a transaction**.
+* They **auto-open a session** and execute the query.
+
+For example:
+
+```java
+User user = userRepository.findById(1L).orElseThrow();
+```
+
+This works **without `@Transactional`**, and it fetches data just fine.
+
+---
+
+## 🚨 When You Might Still Want `@Transactional(readOnly = true)`
+
+Even though it's optional for reads, you **may want to** add:
+
+```java
+@Transactional(readOnly = true)
+```
+
+### Why?
+
+1. **Performance Boost**
+
+   * Tells Hibernate: "This is a read-only operation"
+   * So it skips dirty checking, caching, etc.
+
+2. **Consistency**
+
+   * For databases that require transactions even for reads (like PostgreSQL with repeatable reads), it ensures consistent reads.
+
+---
+
+## ⚠️ Caution: Lazy-Loaded Relationships
+
+If you fetch an entity and try to access a **lazy-loaded relation (e.g., `user.getRoles()`)** **outside of a transaction**, you'll get:
+
+> `LazyInitializationException`
+
+Because Hibernate needs a **transactional context** to load the relation.
+
+So for complex reads involving lazy relations, wrap in:
+
+```java
+@Transactional(readOnly = true)
+public User getUserWithRoles(Long id) {
+    User user = userRepository.findById(id).orElseThrow();
+    user.getRoles().size(); // triggers lazy load
+    return user;
+}
+```
+
+---
+
+## ✅ Summary
+
+| Operation                           | Needs `@Transactional`?           | Notes                                |
+| ----------------------------------- | --------------------------------- | ------------------------------------ |
+| `findById()`, `findAll()`           | ❌ No                              | Works fine without it                |
+| Complex reads with lazy loading     | ✅ Recommended (`readOnly = true`) | Prevents LazyInitializationException |
+| Write operations (`save`, `delete`) | ✅ Required                        | Ensures rollback & atomicity         |
+
+
+
+---
+
+### 🧾 **Spring Data + Transactions Cheat Sheet**
+
+#### ✅ **Transaction Management**
+
+| Scenario                             | Notes                                             |
+| ------------------------------------ | ------------------------------------------------- |
+| ✅ Simple Reads                       | No `@Transactional` needed                        |
+| ✅ Writes/Deletes                     | Use `@Transactional` to ensure commit/rollback    |
+| 🚫 Internal method call (same class) | Proxy bypassed → `@Transactional` won't work      |
+| ✅ `@Transactional(readOnly = true)`  | Optimized for performance on reads                |
+| ✅ Batch save                         | Use `@Transactional` to group all saves/rollbacks |
+
+#### 🔍 **Repository Types**
+
+| Interface                    | Use Case                                                          |
+| ---------------------------- | ----------------------------------------------------------------- |
+| `Repository`                 | Marker interface                                                  |
+| `CrudRepository`             | Basic CRUD                                                        |
+| `PagingAndSortingRepository` | CRUD + Pagination/Sorting                                         |
+| `JpaRepository`              | Full JPA support + Specifications                                 |
+| `MongoRepository`            | For MongoDB-specific ops                                          |
+| `ListCrudRepository`         | Same as `CrudRepository` but returns `List` instead of `Iterable` |
+
+#### 🏗️ **Custom Repository**
+
+| Concept                 | Purpose                                         |
+| ----------------------- | ----------------------------------------------- |
+| `@NoRepositoryBean`     | Prevents base repo instantiation                |
+| `@RepositoryDefinition` | Use if not extending any Spring Data interfaces |
+| `SimpleJpaRepository`   | Default internal implementation behind proxies  |
+
+#### 🧠 **EntityManager**
+
+| Use Case                                                            |
+| ------------------------------------------------------------------- |
+| Fine-grained control over persistence context (flush, detach, etc.) |
+| Custom complex queries                                              |
+| Batch inserts/updates with manual transaction control               |
+
+#### 🛠️ **Spring Data Magic**
+
+| Feature                 | Example                                                 |
+| ----------------------- | ------------------------------------------------------- |
+| Derived query method    | `findByEmailAndStatus()`                                |
+| Custom query            | `@Query("SELECT u FROM User u WHERE ...")`              |
+| Proxy-based transaction | Created by Spring AOP for methods with `@Transactional` |
+
+---
+
+### ⚠️ Common Gotchas
+
+* Lazy load outside transaction → `LazyInitializationException`
+* Calling `@Transactional` method from same class → **no transaction**
+* Avoid mixing transactional and non-transactional logic in same method
