@@ -168,3 +168,105 @@ public abstract class BaseEntity<ID> implements Persistable<ID> {
 | Entity with manually set ID | `merge()`            | May fail if ID doesn’t exist in DB |
 | With `Persistable<T>`       | Depends on `isNew()` | Full control over behavior         |
 | Detached entity             | `merge()`            | Safe to reattach and update        |
+
+---
+
+## **important JPA terms and annotations** one by one with simple language and clear differences:
+
+
+### ✅ `@MappedSuperclass`
+
+* A **JPA annotation** used on a class that **won’t be an entity itself**, but whose fields **should be inherited** by other entity classes.
+* Think of it as a **base class for common entity fields**, like `id`, `createdDate`, etc.
+
+```java
+@MappedSuperclass
+public abstract class BaseEntity {
+  @Id
+  private Long id;
+  private LocalDateTime createdAt;
+}
+```
+
+Now any entity class that extends `BaseEntity` will **inherit** `id` and `createdAt`, and JPA will map those to columns in the table of the child entity.
+
+---
+
+### 🔁 `@Transient` vs `transient` (Java keyword)
+
+| Feature     | `@Transient` (JPA)                         | `transient` (Java)                                   |
+| ----------- | ------------------------------------------ | ---------------------------------------------------- |
+| Type        | JPA annotation                             | Java keyword                                         |
+| Purpose     | Ignore the field during **DB persistence** | Ignore the field during **serialization** (Java I/O) |
+| Used With   | JPA entities                               | Serializable classes                                 |
+| Affects DB? | Yes – field won’t be stored in DB          | No – field won’t be written to a file                |
+
+✅ **Often used together** if you want to skip both DB persistence and serialization:
+
+```java
+@Transient
+private transient boolean isNew;
+```
+
+---
+
+### 🔄 `@PostPersist` and `@PostLoad`
+
+These are **JPA lifecycle callbacks**.
+
+| Annotation     | When Called?                                    | Purpose                                     |
+| -------------- | ----------------------------------------------- | ------------------------------------------- |
+| `@PostPersist` | After an entity is persisted (inserted into DB) | Useful to update state after save           |
+| `@PostLoad`    | After an entity is loaded from DB               | Useful for setting computed fields or flags |
+
+✅ Example:
+
+```java
+@PostPersist
+@PostLoad
+void markNotNew() {
+  this.isNew = false;
+}
+```
+
+Used in conjunction with `Persistable` interface to tell Spring: "This object is no longer new, don’t call `persist()` again."
+
+---
+
+### 🔗 Detached Entity
+
+In JPA, entities can be in different **states**:
+
+| State        | Description                                                                    |
+| ------------ | ------------------------------------------------------------------------------ |
+| **New**      | Just created with `new`, not associated with DB                                |
+| **Managed**  | Loaded by EntityManager or persisted and tracked by it                         |
+| **Detached** | Was managed earlier, but now disconnected (EntityManager is closed or cleared) |
+| **Removed**  | Marked for deletion, will be deleted when transaction commits                  |
+
+✅ **Detached** means:
+
+* The entity is **not being tracked** by the persistence context.
+* Any changes made to it **won’t be saved** unless you **re-attach it using `merge()`**.
+
+Example:
+
+```java
+User user = entityManager.find(User.class, 1L);
+entityManager.detach(user); // Now it's detached
+user.setName("New Name");
+entityManager.merge(user);  // Re-attach to persist the change
+```
+
+---
+
+### 🧠 Summary
+
+| Term                | Meaning                                                                |
+| ------------------- | ---------------------------------------------------------------------- |
+| `@MappedSuperclass` | Share fields between entities without becoming an entity itself        |
+| `@Transient`        | Skip DB column mapping                                                 |
+| `transient`         | Skip Java serialization                                                |
+| `@PostPersist`      | Callback after insert                                                  |
+| `@PostLoad`         | Callback after fetch from DB                                           |
+| Detached Entity     | No longer managed by EntityManager; needs `merge()` to persist changes |
