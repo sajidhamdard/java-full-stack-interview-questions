@@ -155,3 +155,209 @@ Here’s a summary table of the most commonly used Java built-in functional inte
 | **BiFunction\<T, U, R>** | T, U     | R           | `apply(T, U)`  | `(x, y) -> x + y`                     |
 | **UnaryOperator<T>**     | T        | T           | `apply(T)`     | `x -> x * x`                          |
 | **BinaryOperator<T>**    | T, T     | T           | `apply(T, T)`  | `(x, y) -> x + y`                     |
+
+---
+
+Below are **1–2 practical examples** of each major functional interface being used with **Java Streams**.
+
+---
+
+## 🔁 1. **Predicate<T>** – Used for filtering elements
+
+```java
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.function.Predicate;
+
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+
+        Predicate<Integer> isEven = x -> x % 2 == 0;
+
+        List<Integer> evens = numbers.stream()
+                                     .filter(isEven) // filter using Predicate
+                                     .collect(Collectors.toList());
+
+        System.out.println(evens); // [2, 4, 6]
+    }
+}
+```
+
+---
+
+## 🎯 2. **Function\<T, R>** – Used for mapping (transformation)
+
+```java
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.function.Function;
+
+public class Test {
+    public static void main(String[] args) {
+        List<String> names = List.of("alice", "bob");
+
+        Function<String, String> toUpper = name -> name.toUpperCase();
+
+        List<String> upperNames = names.stream()
+                                       .map(toUpper) // map using Function
+                                       .collect(Collectors.toList());
+
+        System.out.println(upperNames); // [ALICE, BOB]
+    }
+}
+```
+
+---
+
+## ✅ 3. **Consumer<T>** – Used with `forEach` to perform an action on each element
+
+```java
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Test {
+    public static void main(String[] args) {
+        List<String> list = List.of("Java", "Python", "C++");
+
+        Consumer<String> printer = x -> System.out.println("Language: " + x);
+
+        list.stream().forEach(printer); // forEach using Consumer
+    }
+}
+```
+
+---
+
+## 🛠 4. **Supplier<T>** – Typically not used *inside* stream pipelines, but useful *outside* to supply data
+
+```java
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+public class Test {
+    public static void main(String[] args) {
+        Supplier<Double> randomSupplier = () -> Math.random();
+
+        Stream.generate(randomSupplier) // generates infinite stream
+              .limit(5)
+              .forEach(System.out::println); // prints 5 random numbers
+    }
+}
+```
+
+---
+
+## 🧪 5. **BiFunction\<T, U, R>** – Combine two inputs to produce an output (used via `.map()` or custom collectors)
+
+```java
+import java.util.function.BiFunction;
+
+public class Test {
+    public static void main(String[] args) {
+        BiFunction<String, Integer, String> repeater = (str, times) -> str.repeat(times);
+
+        System.out.println(repeater.apply("Hi ", 3)); // Hi Hi Hi 
+    }
+}
+```
+
+Usage in stream:
+
+```java
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.stream.IntStream;
+
+public class Test {
+    public static void main(String[] args) {
+        List<String> words = List.of("Hi", "Bye");
+        BiFunction<String, Integer, String> repeater = (s, count) -> s.repeat(count);
+
+        IntStream.range(0, words.size())
+                 .mapToObj(i -> repeater.apply(words.get(i), i + 1))
+                 .forEach(System.out::println);
+        // Hi
+        // ByeBye
+    }
+}
+```
+
+---
+
+## 💬 6. **BiConsumer\<T, U>** – Often used in `Map.forEach` or custom processing
+
+```java
+import java.util.Map;
+import java.util.function.BiConsumer;
+
+public class Test {
+    public static void main(String[] args) {
+        Map<String, Integer> map = Map.of("apple", 2, "banana", 3);
+
+        BiConsumer<String, Integer> printer = (k, v) -> System.out.println(k + " -> " + v);
+
+        map.forEach(printer); // BiConsumer with Map
+    }
+}
+```
+
+---
+
+## 🔁 7. **UnaryOperator<T>** – Used in `map` when type doesn't change
+
+```java
+import java.util.List;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> list = List.of(1, 2, 3);
+
+        UnaryOperator<Integer> square = x -> x * x;
+
+        List<Integer> squared = list.stream()
+                                    .map(square) // same input and output type
+                                    .collect(Collectors.toList());
+
+        System.out.println(squared); // [1, 4, 9]
+    }
+}
+```
+
+---
+
+## ➗ 8. **BinaryOperator<T>** – Used in `reduce()` to accumulate results
+
+```java
+import java.util.List;
+import java.util.function.BinaryOperator;
+
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> nums = List.of(1, 2, 3, 4);
+
+        BinaryOperator<Integer> sum = (a, b) -> a + b;
+
+        int total = nums.stream().reduce(0, sum); // reduce using BinaryOperator
+
+        System.out.println(total); // 10
+    }
+}
+```
+
+---
+
+### ✅ Summary:
+
+| Interface           | Common Stream Use                 |
+| ------------------- | --------------------------------- |
+| `Predicate<T>`      | `.filter()`                       |
+| `Function<T, R>`    | `.map()`                          |
+| `Consumer<T>`       | `.forEach()`                      |
+| `Supplier<T>`       | `Stream.generate()`               |
+| `BiFunction<T,U,R>` | custom `.map()` or `.reduce()`    |
+| `BiConsumer<T,U>`   | `Map.forEach()`                   |
+| `UnaryOperator<T>`  | `.map()` for same-type conversion |
+| `BinaryOperator<T>` | `.reduce()`                       |
