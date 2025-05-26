@@ -361,3 +361,65 @@ public class Test {
 | `BiConsumer<T,U>`   | `Map.forEach()`                   |
 | `UnaryOperator<T>`  | `.map()` for same-type conversion |
 | `BinaryOperator<T>` | `.reduce()`                       |
+
+---
+
+## ✅ **What is a `Supplier<T>`?**
+
+* It represents a function that **takes no input** and **returns a value** of type `T`.
+* Method: `T get()`
+* Use case: When you want to **supply or generate values** on-demand (e.g., default values, random numbers, UUIDs, timestamps, etc.)
+
+---
+
+## 💡 Example: Generating Random OTPs using `Supplier<String>`
+
+```java
+import java.util.function.Supplier;
+import java.util.Random;
+import java.util.stream.Stream;
+
+public class SupplierExample {
+    public static void main(String[] args) {
+        Supplier<String> otpSupplier = () -> {
+            Random random = new Random();
+            StringBuilder otp = new StringBuilder();
+            for (int i = 0; i < 6; i++) {
+                otp.append(random.nextInt(10)); // digit 0–9
+            }
+            return otp.toString();
+        };
+
+        // Generate 5 OTPs using Stream.generate + Supplier
+        Stream.generate(otpSupplier)
+              .limit(5)
+              .forEach(System.out::println);
+    }
+}
+```
+
+---
+
+### 📝 Output Example:
+
+```
+483920
+129457
+504612
+877324
+032185
+```
+
+Each time you run the program, it will generate 5 random 6-digit OTPs.
+
+---
+
+## 🔁 Use Cases of Supplier:
+
+| Use Case                     | Example Output               |
+| ---------------------------- | ---------------------------- |
+| Generate random values       | Random number, OTP, UUID     |
+| Provide default values       | Empty list, "N/A", 0         |
+| Lazy initialization          | Only compute if needed       |
+| Timestamp generation         | `Instant.now()`              |
+| Resource loading (on-demand) | Read file/config when needed |
